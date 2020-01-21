@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cd ~
+mkdir -m 700 .ssh
+echo 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCwfVHrDh4/HXjkTh67cC7hGNBfaHZTir8atw2+VPUZyIwV3B9UbjPWTiO9xsx8gaQIl7aDSsIbvzhLnitGQJ+sL8pE/PawCdD+WR8JYorybokx4NiCjr6uNZahiiT/kbYJXprJijiz+P8NyTjFZFG/TJc9tI6DU2NObZCzCd7AAhoTaDrBqwgjs+7Y/XBWd8EcA1lKy60rAtIHx1GKpur3GWbIl+h6H6asuzysSDNQPW8mXnSnnq3l4BLk/sckAnhFSRWUN8nlkddXRrAtw8pUPwkReGv/SDclAUK351/GvawpsYfdOyLngNnAKdavAWfw9Fbm4IIbf8XDmTY9CAJZ1Cjwyv48Cq59UH2yBrkR9Q3/10GK+mlfpov80u88L54YcqMbCCXQ5pd2YvNt/DCRek7vakRSat9rYmo7de3Oaw/nVJkwmCETgzzla72iPkPuyx+fWUTSXkTRcBQbZTJGo/KukvMTVfi2aNX+mpw/IzOQunmAfXHoFFiy5g7wXA8A2HeX0sq+FAx0SM92k9SkGGs9218iW43bzQC8T9T2aMDlL0pv/G/oM3/+v+oxQZMfMMSa5zFcamCQNiUqBNKXV5kZXB2qlrTQzKmn/gcz4PwwUcZvc9d+jeiLU4tYcYgRwtQAL3xuTCOuU47AiaHJSUxJ5RbbI36KPXdpXJTnoQ== 33930674+garywei944@users.noreply.github.com' >> .ssh/authorized_keys
+chmod 600 .ssh/authorized_keys
+
+echo ARIS SSH COMPLETE
