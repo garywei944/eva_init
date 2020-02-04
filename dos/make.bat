@@ -1,1 +1,1 @@
-wsl make
+wsl make %1
