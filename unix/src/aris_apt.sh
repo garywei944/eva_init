@@ -3,7 +3,7 @@
 # Initialization and update apt
 sudo apt update
 sudo apt -y upgrade
-sudo apt -y install zsh wget curl rsync net-tools zip emacs vim git git-flow screen dos2unix build-essential default-jdk python python-pip python3 python3-pip nodejs npm cmake clang gdb valgrind build-essential libgtest-dev
+sudo apt -y install zsh wget curl rsync net-tools zip emacs vim git git-flow screen dos2unix build-essential default-jdk python python-pip python3 python3-pip nodejs npm cmake clang gdb valgrind ctags build-essential libgtest-dev
 
 # Install GooleTest
 cd /usr/src/googletest
