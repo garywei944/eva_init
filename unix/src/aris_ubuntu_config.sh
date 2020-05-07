@@ -5,9 +5,9 @@ cd ~
 # Configuration Terminal
 chsh -s /bin/zsh
 wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
-# curl -sLf https://spacevim.org/install.sh | bash
-# rm -fr .emacs.d
-# git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+curl -sLf https://spacevim.org/install.sh | bash
+rm -fr .emacs.d
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 # Configure ssh
 $SRC/aris_id_rsa.sh
