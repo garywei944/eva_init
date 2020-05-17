@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Create User
+sudo adduser aris
+
 # Initialization and update apt
 sudo apt update
 sudo apt -y upgrade

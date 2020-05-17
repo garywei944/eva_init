@@ -6,6 +6,7 @@ cd ~
 chsh -s /bin/zsh
 wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
 curl -sLf https://spacevim.org/install.sh | bash
+# curl -sLf https://spacevim.org/install.sh | bash -s -- --uninstall
 rm -fr .emacs.d
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
