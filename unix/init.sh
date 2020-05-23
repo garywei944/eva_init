@@ -17,7 +17,7 @@ sudo mkswap -f swapfile
 sudo swapon swapfile
 
 # Install basic softwares
-sudo apt -y install zsh wget curl rsync net-tools zip emacs vim git git-flow screen dos2unix build-essential default-jdk python python-pip python3 python3-pip virtualenv nodejs npm cmake clang gdb valgrind ctags build-essential libgtest-dev openssh-server rar
+sudo apt -y install linux-generic zsh wget curl rsync net-tools zip emacs vim git git-flow screen dos2unix build-essential default-jdk python python-pip python3 python3-pip virtualenv nodejs npm cmake clang gdb valgrind ctags build-essential libgtest-dev openssh-server rar shc
 
 # Install GooleTest
 cd /usr/src/googletest
@@ -58,6 +58,7 @@ UUID=2896A4A90E3A7893	/mnt/kiana	ntfs	defaults	0	0' | sudo tee -a /etc/fstab
 sudo add-apt-repository ppa:noobslab/macbuntu
 sudo apt update
 sudo apt -y install albert
+mkdir -p ~/.config/autostart/
 cp /usr/share/applications/albert.desktop ~/.config/autostart/
 chmod +x ~/.config/autostart/albert.desktop
 
@@ -91,7 +92,7 @@ echo 'export PATH=$PATH:~/bin' >> ~/.zshrc
 # git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 # Get ssh private key
-./eva_id_rsa
+# ./eva_id_rsa
 
 # Making directories and symbolic links
 cd ~
@@ -123,7 +124,7 @@ rm -fr Python-3.8.3.tgz Python-3.8.3
 
 # Install Pycharm
 sudo snap install pycharm-professional --classic
-mkdir -p ~/.config/JetBrains/PyCharm2020.1/jba_config/linux.keymaps
+mkdir -p ~/.config/JetBrains/PyCharm2020.1/jba_config/linux.keymaps/
 echo '<keymap version="1" name="Ar1S" parent="Sublime Text">
   <action id="ActivateMessagesToolWindow">
     <keyboard-shortcut first-keystroke="alt 0" />
@@ -173,10 +174,10 @@ echo '<keymap version="1" name="Ar1S" parent="Sublime Text">
 
 # Install Virtual Box
 cd /tmp
-wget https://download.virtualbox.org/virtualbox/6.1.8/virtualbox-6.1_6.1.8-137981~Ubuntu~bionic_amd64.deb -0 virtualbox.deb
+wget https://download.virtualbox.org/virtualbox/6.1.8/virtualbox-6.1_6.1.8-137981~Ubuntu~bionic_amd64.deb
 wget https://releases.hashicorp.com/vagrant/2.2.9/vagrant_2.2.9_x86_64.deb
-apt -y install ./virtualbox.deb ./vagrant_2.2.6_x86_64.deb
-rm -f virtualbox.deb vagrant_2.2.6_x86_64.deb
+sudo apt -y install ./virtualbox* ./vagrant*
+rm -f virtualbox* vagrant*
 
 # Configure Vagrant
 cd ~
@@ -196,5 +197,9 @@ sudo apt -y install docker-ce docker-ce-cli containerd.io
 sudo gpasswd -a ${USER} docker
 
 # Install VMware
+# YG5H2-ANZ0H-M8ERY-TXZZZ-YKRV8
 cd /tmp
-wget -O vmware.bin https://www.vmware.com/go/getWorkstation-linux
+wget https://download3.vmware.com/software/wkst/file/VMware-Workstation-Full-15.5.2-15785246.x86_64.bundle
+chmod +x VMware*
+sudo ./VMware-Workstation-Full-15.5.2-15785246.x86_64.bundle
+rm -fr VMware*
