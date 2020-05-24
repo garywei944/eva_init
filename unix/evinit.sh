@@ -3,6 +3,19 @@
 # @Author  : garywei944 (garywei944@gmail.com)
 # @Link    : https://github.com/garywei944
 
+2>err.log exec
+
+. evapt.sh
+
+config_key() {
+	
+}
+
+config_git() {
+	
+}
+
+config_sublime() {
 	cd ~/.config
 	mkdir -p sublime-text-3/Installed\ Packages
 	cd sublime-text-3/Installed\ Packages
@@ -10,6 +23,7 @@
 	cd ..
 	rm -fr Packages
 	git clone git@github.com:garywei944/aris_st3.git Packages
+}
 
 # Install Sublime Text Dependencies
 sudo -H pip3 install -U pip

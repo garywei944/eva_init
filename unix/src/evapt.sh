@@ -3,8 +3,6 @@
 # @Author  : garywei944 (garywei944@gmail.com)
 # @Link    : https://github.com/garywei944
 
-2>err.log exec
-
 sudo apt update
 
 update() {
@@ -178,8 +176,3 @@ cudnn() {
 gnome_chrome_shell() {
 	sudo apt -y install chrome-gnome-shell
 }
-
-
-for cmd in $@; do
-	$cmd
-done
