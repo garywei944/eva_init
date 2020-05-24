@@ -8,16 +8,16 @@ sudo apt -y upgrade
 sudo ubuntu-drivers autoinstall
 
 # System setup
-cd /
-sudo swapoff swapfile
-sudo rm swapfile
-sudo dd if=/dev/zero of=swapfile bs=1024 count=33554432
-sudo chmod 600 swapfile
-sudo mkswap -f swapfile
-sudo swapon swapfile
+# cd /
+# sudo swapoff swapfile
+# sudo rm swapfile
+# sudo dd if=/dev/zero of=swapfile bs=1024 count=33554432
+# sudo chmod 600 swapfile
+# sudo mkswap -f swapfile
+# sudo swapon swapfile
 
 # Install basic softwares
-sudo apt -y install linux-generic zsh wget curl rsync net-tools zip emacs vim git git-flow screen dos2unix build-essential default-jdk python python-pip python3 python3-pip virtualenv nodejs npm cmake clang gdb valgrind ctags build-essential libgtest-dev openssh-server rar shc
+sudo apt -y install zsh wget curl rsync net-tools zip emacs vim git git-flow screen dos2unix build-essential default-jdk python python-pip python3 python3-pip virtualenv nodejs npm cmake clang gdb valgrind ctags build-essential libgtest-dev openssh-server rar shc
 
 # Install GooleTest
 cd /usr/src/googletest
@@ -85,7 +85,8 @@ git clone git@github.com:garywei944/aris_st3.git Packages
 # Configuration Terminal
 chsh -s /bin/zsh
 wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
-echo 'export PATH=$PATH:~/bin' >> ~/.zshrc
+git clone git@github.com:garywei944/eva_bin.git ~/.eva
+echo 'export PATH=$PATH:~/.eva/bin' >> ~/.bashrc
 # curl -sLf https://spacevim.org/install.sh | bash
 # curl -sLf https://spacevim.org/install.sh | bash -s -- --uninstall
 # rm -fr .emacs.d
@@ -97,11 +98,11 @@ echo 'export PATH=$PATH:~/bin' >> ~/.zshrc
 # Making directories and symbolic links
 cd ~
 mkdir Projects
-cd Desktop
-ln -s /mnt/windows
-ln -s /mnt/adam
-ln -s /mnt/kiana
-ln -s ~/Projects
+# cd Desktop
+# ln -s /mnt/windows
+# ln -s /mnt/adam
+# ln -s /mnt/kiana
+# ln -s ~/Projects
 
 # Install Sublime Text Dependencies
 sudo -H pip3 install -U pip
@@ -117,8 +118,8 @@ cd Python-3.8.3
 ./configure --enable-optimizations
 make -j 12
 sudo -H make altinstall
-sudo ln -fs /usr/local/bin/python3.8 /usr/bin/python3.8
-sudo ln -fs /usr/local/bin/pip3.8 /usr/bin/pip3.8
+# sudo ln -fs /usr/local/bin/python3.8 /usr/bin/python3.8
+# sudo ln -fs /usr/local/bin/pip3.8 /usr/bin/pip3.8
 cd ..
 rm -fr Python-3.8.3.tgz Python-3.8.3
 
@@ -203,3 +204,26 @@ wget https://download3.vmware.com/software/wkst/file/VMware-Workstation-Full-15.
 chmod +x VMware*
 sudo ./VMware-Workstation-Full-15.5.2-15785246.x86_64.bundle
 rm -fr VMware*
+
+# Install CUDA
+cd /tmp
+wget http://developer.download.nvidia.com/compute/cuda/10.2/Prod/local_installers/cuda_10.2.89_440.33.01_linux.run
+sudo sh cuda_10.2.89_440.33.01_linux.run
+rm -fr cuda_10.2.89_440.33.01_linux.run
+echo 'export PATH=/usr/local/cuda-10.2/bin:/usr/local/cuda-10.2/nsight-compute-2019.5.0${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-10.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}' >> ~/.bashrc
+sudo apt -y install nvidia-nsight
+sudo update-alternatives --config java
+
+# Install cuDNN
+cd /tmp
+read Need to manaully download cuDNN
+# wget https://developer.download.nvidia.com/compute/machine-learning/cudnn/secure/7.6.5.32/Production/10.2_20191118/Ubuntu18_04-x64/libcudnn7_7.6.5.32-1%2Bcuda10.2_amd64.deb?JogTo19uDBhZnb0DQpW5jIVcCla0jxFD1D2kJxXbhFuEwhWqIo0M24f-IjdnmZatnhTGahyq9WQ2PKfvAz7kX1R46GlSzaidOqkrsakV6ay-pXWmVS3rbTXBBpX8cZbohoqhOtgZ_tB_zMoq9Q3472oBLSmbtQeNQpXduREMHkcMVCJbsv4vjV0bOXJ5YP96OX8lqbNbaOCJCVZcwRrrDhadjTjy5S_B6weI4D4VInzx1IYlfn_VvSYpJhcIyWxJ
+sudo apt -y install ./libcudnn*
+sudo apt -y install python3-pip python3-tk
+sudo -H pip3 install numpy scipy matplotlib pillow
+
+# Install Anaconda3
+cd /tmp
+wget https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh
+sudo sh Anaconda3*
