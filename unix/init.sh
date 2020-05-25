@@ -107,7 +107,7 @@ mkdir Projects
 # Install Sublime Text Dependencies
 sudo -H pip3 install -U pip
 sudo -H pip3 install --upgrade --pre CodeIntel
-sudo npm install -g jshint csslint xg-htmlhint
+sudo -H npm install -g jshint csslint xg-htmlhint
 
 # Install Python3.8.3
 cd /tmp
