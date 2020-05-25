@@ -11,6 +11,8 @@ update() {
 
 # Basic Runtime Environments
 basic() {
+	update
+
 	# System Essentials
 	sudo apt remove -y --purge openssh-server
 	sudo apt -y install zsh screen net-tools openssh-server wget curl zip rar dos2unix
@@ -29,7 +31,7 @@ driver() {
 
 # Install Python3.8.3
 # @version
-python383() {
+python38() {
 	cd /tmp
 	sudo apt -y install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev liblzma-dev
 	wget https://www.python.org/ftp/python/3.8.3/Python-3.8.3.tgz
