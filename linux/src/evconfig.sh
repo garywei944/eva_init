@@ -20,6 +20,12 @@ UUID=2F4E51DDBA454123	/mnt/windows	ntfs	defaults	0	0
 UUID=09C1B27DA5EB573A	/mnt/adam	ntfs	defaults	0	0
 UUID=2896A4A90E3A7893	/mnt/kiana	ntfs	defaults	0	0
 EOF
+
+	# Set system time
+	sudo timedatectl set-local-rtc 1
+	sudo apt -y install ntpdate
+	sudo ntpdate time.windows.com
+	sudo hwclock --localtime --systohc
 }
 
 config_key() {
