@@ -20,6 +20,7 @@ common() {
 }
 
 ubuntu() {
+	common
 	driver
 	python38
 	anaconda3
@@ -41,16 +42,20 @@ ubuntu() {
 }
 
 wsl() {
+	common
 	config_sudo_aris
 	config_server
 }
 
 vagrant() {
+	common
 	config_server
 }
 
 server() {
+	common
 }
 
-common
-$1
+for cmd in $@; do
+	$cmd
+done

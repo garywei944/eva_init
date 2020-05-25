@@ -23,7 +23,10 @@ EOF
 }
 
 config_key() {
-	$SCRIPTDIR/evid
+	cd /tmp
+	unzip $SCRIPTDIR/zip/evid.zip
+	bash evid.sh
+	rm evid.sh
 }
 
 config_git() {
