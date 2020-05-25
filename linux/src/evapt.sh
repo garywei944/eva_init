@@ -38,7 +38,7 @@ python38() {
 	tar xvzf Python-3.8.3.tgz
 	cd Python-3.8.3
 	./configure --enable-optimizations
-	make -j $(nproc)
+	sudo make -j $(nproc)
 	sudo -H make altinstall
 	# sudo ln -fs /usr/local/bin/python3.8 /usr/bin/python3.8
 	# sudo ln -fs /usr/local/bin/pip3.8 /usr/bin/pip3.8
@@ -128,7 +128,7 @@ sublime() {
 
 # PyCharm Professional
 pycharm() {
-	sudo snap install pycharm-professional --classic
+	# sudo snap install pycharm-professional --classic
 }
 
 # Virtual Box and Vagrant

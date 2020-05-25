@@ -109,6 +109,14 @@ config_terminal() {
 	# curl -sLf https://spacevim.org/install.sh | bash -s -- --uninstall
 	# rm -fr .emacs.d
 	# git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+
+	# Configure zsh themes
+	cd /tmp
+	git clone git@github.com:iplaces/astro-zsh-theme.git
+	cp astro-zsh-theme/astro.zsh-theme ~/.oh-my-zsh/themes
+	echo 'ZSH_THEME="random"
+ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "astro" "ys" )' >> ~/.zshrc
+	rm -fr astro-zsh-theme
 }
 
 # Configure JetBrain
