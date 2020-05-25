@@ -95,7 +95,7 @@ config_sublime() {
 
 # Configuration Terminal
 config_terminal() {
-	chsh -s /bin/zsh
+	2>&1 chsh -s /bin/zsh
 	wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
 	git clone git@github.com:garywei944/eva_bin.git ~/.eva
 	echo 'export PATH=$PATH:~/.eva/bin' >> ~/.zshrc

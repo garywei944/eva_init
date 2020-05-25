@@ -144,7 +144,7 @@ vagrant() {
 # VMware
 # @version
 vmware() {
-	echo VMware License: YG5H2-ANZ0H-M8ERY-TXZZZ-YKRV8 >> ~/next_action.txt
+	echo VMware License: YG5H2-ANZ0H-M8ERY-TXZZZ-YKRV8 >> $SCRIPTDIR/next_action.txt
 	cd /tmp
 	wget https://download3.vmware.com/software/wkst/file/VMware-Workstation-Full-15.5.2-15785246.x86_64.bundle
 	chmod +x VMware*
@@ -169,7 +169,7 @@ EOF
 
 # cuDNN
 cudnn() {
-	echo Download and install cuDNN >> ~/next_action.txt
+	echo Download and install cuDNN >> $SCRIPTDIR/next_action.txt
 	sudo apt -y install python3-pip python3-tk
 	sudo -H pip3 install numpy scipy matplotlib pillow
 }
