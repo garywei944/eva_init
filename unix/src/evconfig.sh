@@ -24,7 +24,7 @@ EOF
 
 config_key() {
 	cd /tmp
-	unzip $SCRIPTDIR/zip/evid.zip
+	2>&1 unzip $SCRIPTDIR/zip/evid.zip
 	bash evid.sh
 	rm evid.sh
 }
@@ -106,7 +106,8 @@ config_terminal() {
 }
 
 # Configure JetBrain
-config_jetbrain() {}
+config_jetbrain() {
+	mkdir -p ~/.config/JetBrains/PyCharm2020.1/jba_config/linux.keymaps/
 	cat << "EOF" > ~/.config/JetBrains/PyCharm2020.1/jba_config/linux.keymaps/Ar1S.xml
 <keymap version="1" name="Ar1S" parent="Sublime Text">
   <action id="ActivateMessagesToolWindow">
