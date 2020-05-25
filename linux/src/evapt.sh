@@ -18,7 +18,7 @@ basic() {
 	sudo apt -y install zsh screen net-tools openssh-server wget curl zip rar dos2unix
 
 	# Development Runtimes
-	sudo apt -y install emacs vim git git-flow build-essential default-jdk python python-pip python3 python3-pip virtualenv nodejs npm cmake clang gdb valgrind ctags
+	sudo apt -y install emacs vim git git-flow build-essential default-jdk python python-pip python3 python3-pip virtualenv python3-venv nodejs npm cmake clang gdb valgrind ctags
 
 	# Beta
 	sudo apt -y install rsync shc zsh-doc
