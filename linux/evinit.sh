@@ -38,6 +38,7 @@ ubuntu() {
 	cuda
 	cudnn
 	gnome_chrome_shell
+	netease_music
 
 	config_sublime
 	# config_jetbrain
@@ -45,6 +46,7 @@ ubuntu() {
 }
 
 wsl() {
+	sudo apt remove -y --purge openssh-server
 	common
 	config_sudo_aris
 	config_server
