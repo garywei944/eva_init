@@ -30,7 +30,7 @@ EOF
 
 config_key() {
 	cd /tmp
-	2>&1 unzip $SCRIPTDIR/zip/evid.zip
+	unzip $SCRIPTDIR/zip/evid.zip
 	bash evid.sh
 	rm evid.sh
 }
@@ -47,8 +47,11 @@ config_git() {
   apply-gitignore = !git ls-files -ci --exclude-standard -z | xargs -0 git rm --cached
 EOF
 
-	mkdir -p ~/.ssh
-	chmod 700 ~/.ssh
+	if [ ! -d ~/.ssh ]; then
+		mkdir ~/.ssh
+		chmod 700 ~/.ssh
+	fi
+
 	ssh-keyscan -H github.com >> ~/.ssh/known_hosts
 	chmod 644 ~/.ssh/known_hosts
 }
@@ -94,17 +97,48 @@ config_sublime() {
 	git clone git@github.com:garywei944/aris_st3.git Packages
 
 	# Install Sublime Text Dependencies
-	sudo -H pip3 install -U pip
-	sudo -H pip3 install --upgrade --pre CodeIntel
-	sudo -H npm install -g jshint csslint xg-htmlhint
+	pip install --upgrade --pre CodeIntel
+	pip3 install --upgrade --pre CodeIntel
+	sudo npm install -g jshint csslint xg-htmlhint
+
+	mkdir -p ~/.codeintel
+	cat << "EOF" > ~/.codeintel/config.log
+{
+    "PHP": {
+        "php": "/usr/bin/php",
+        "phpExtraPaths": [],
+        "phpConfigFile": "php.ini"
+    },
+    "JavaScript": {
+        "javascriptExtraPaths": []
+    },
+    "Perl": {
+        "perl": "/usr/bin/perl",
+        "perlExtraPaths": []
+    },
+    "Ruby": {
+        "php": "/usr/bin/ruby",
+        "phpExtraPaths": []
+    },
+    "Python": {
+        "php": "/usr/bin/python",
+        "phpExtraPaths": []
+    },
+    "Python3": {
+        "php": "/usr/bin/python3",
+        "phpExtraPaths": []
+    }
+}
+EOF
 }
 
 # Configuration Terminal
 config_terminal() {
-	2>&1 chsh -s /bin/zsh
+	chsh -s /bin/zsh
 	wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
 	git clone git@github.com:garywei944/eva_bin.git ~/.eva
-	echo 'export PATH=$PATH:~/.eva/bin' >> ~/.zshrc
+	echo '
+export PATH=$PATH:~/.eva/bin' >> ~/.zshrc
 	# curl -sLf https://spacevim.org/install.sh | bash
 	# curl -sLf https://spacevim.org/install.sh | bash -s -- --uninstall
 	# rm -fr .emacs.d
@@ -114,8 +148,8 @@ config_terminal() {
 	cd /tmp
 	git clone git@github.com:iplaces/astro-zsh-theme.git
 	cp astro-zsh-theme/astro.zsh-theme ~/.oh-my-zsh/themes
-	echo 'ZSH_THEME="random"
-ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "astro" "ys" )' >> ~/.zshrc
+# 	echo 'ZSH_THEME="random"
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "astro" "ys" )' >> ~/.zshrc
 	rm -fr astro-zsh-theme
 }
 

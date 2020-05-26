@@ -4,7 +4,6 @@
 # @Link    : https://github.com/garywei944
 
 SCRIPTDIR=$(cd $(dirname "${BASH_SOURCE[0]}") >/dev/null && pwd)
-2>$SCRIPTDIR/err.log exec
 
 . $SCRIPTDIR/src/evapt.sh
 . $SCRIPTDIR/src/evconfig.sh
@@ -34,13 +33,14 @@ ubuntu() {
 	chrome
 	sublime
 	pycharm
-	vagrant
+	virtualbox
 	vmware
 	cuda
 	cudnn
 	gnome_chrome_shell
 
 	config_sublime
+	# config_jetbrain
 	config_vagrant
 }
 

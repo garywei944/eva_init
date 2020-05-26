@@ -3,9 +3,9 @@
 # @Author  : garywei944 (garywei944@gmail.com)
 # @Link    : https://github.com/garywei944
 
-sudo apt update
 
 update() {
+	sudo apt update
 	sudo apt -y upgrade
 }
 
@@ -55,6 +55,7 @@ anaconda3() {
 	sudo sh Anaconda3*
 	rm -f Anaconda3*
 	cat << "EOF" >> ~/.zshrc
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/aris/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
@@ -139,7 +140,7 @@ pycharm() {
 
 # Virtual Box and Vagrant
 # @version
-vagrant() {
+virtualbox() {
 	cd /tmp
 	wget https://download.virtualbox.org/virtualbox/6.1.8/virtualbox-6.1_6.1.8-137981~Ubuntu~bionic_amd64.deb
 	wget https://releases.hashicorp.com/vagrant/2.2.9/vagrant_2.2.9_x86_64.deb
@@ -166,6 +167,7 @@ cuda() {
 	sudo sh cuda*
 	rm -fr cuda*
 	cat << "EOF" >> ~/.zshrc
+
 export PATH=/usr/local/cuda-10.2/bin:/usr/local/cuda-10.2/nsight-compute-2019.5.0${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda-10.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 EOF
