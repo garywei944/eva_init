@@ -5,8 +5,8 @@
 
 SCRIPTDIR=$(cd $(dirname "${BASH_SOURCE[0]}") >/dev/null && pwd)
 
-. $SCRIPTDIR/src/evapt.sh
-. $SCRIPTDIR/src/evconfig.sh
+. $SCRIPTDIR/evapt.sh
+. $SCRIPTDIR/evconfig.sh
 
 common() {
 	basic

@@ -30,9 +30,10 @@ EOF
 
 config_key() {
 	cd /tmp
-	unzip $SCRIPTDIR/zip/evid.zip
-	bash evid.sh
-	rm evid.sh
+	unzip $SCRIPTDIR/key.zip -d key
+	bash key/evid.sh
+	bash key/evaws.sh
+	rm -fr key
 }
 
 config_git() {
@@ -48,8 +49,7 @@ config_git() {
 EOF
 
 	if [ ! -d ~/.ssh ]; then
-		mkdir ~/.ssh
-		chmod 700 ~/.ssh
+		mkdir -m ~/.ssh
 	fi
 
 	ssh-keyscan -H github.com >> ~/.ssh/known_hosts
