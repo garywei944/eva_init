@@ -130,12 +130,12 @@ sublime() {
 # PyCharm Professional
 # @version
 pycharm() {
-	# sudo snap install pycharm-professional --classic
-	cd /tmp
-	wget https://download-cf.jetbrains.com/toolbox/jetbrains-toolbox-1.17.6856.tar.gz
-	tar xvzf jetbrains-toolbox*.tar.gz
-	./jetbrains-toolbox-1.17.6856/jetbrains-toolbox
-	rm -fr jetbrains-toolbox*
+	sudo snap install pycharm-professional --classic
+	# cd /tmp
+	# wget https://download-cf.jetbrains.com/toolbox/jetbrains-toolbox-1.17.6856.tar.gz
+	# tar xvzf jetbrains-toolbox*.tar.gz
+	# ./jetbrains-toolbox-1.17.6856/jetbrains-toolbox
+	# rm -fr jetbrains-toolbox*
 }
 
 # Virtual Box and Vagrant
@@ -154,9 +154,9 @@ vmware() {
 	echo VMware License: YG5H2-ANZ0H-M8ERY-TXZZZ-YKRV8 >> $SCRIPTDIR/next_action.txt
 	cd /tmp
 	wget https://download3.vmware.com/software/wkst/file/VMware-Workstation-Full-15.5.2-15785246.x86_64.bundle
-	chmod +x VMware*
-	sudo ./VMware*
-	rm -fr VMware*
+	chmod +x VMware-Workstation-Full-*
+	sudo ./VMware-Workstation-Full-*
+	rm -fr VMware-Workstation-Full-*
 }
 
 # CUDA
@@ -182,5 +182,5 @@ cudnn() {
 
 # Gnome Chrome shell
 gnome_chrome_shell() {
-	sudo apt -y install chrome-gnome-shell
+	sudo apt -y install chrome-gnome-shell gnome-screensaver
 }
