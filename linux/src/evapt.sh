@@ -127,8 +127,14 @@ sublime() {
 }
 
 # PyCharm Professional
+# @version
 pycharm() {
 	# sudo snap install pycharm-professional --classic
+	cd /tmp
+	wget https://download-cf.jetbrains.com/toolbox/jetbrains-toolbox-1.17.6856.tar.gz
+	tar xvzf jetbrains-toolbox*.tar.gz
+	./jetbrains-toolbox-1.17.6856/jetbrains-toolbox
+	rm -fr jetbrains-toolbox*
 }
 
 # Virtual Box and Vagrant
@@ -170,8 +176,6 @@ EOF
 # cuDNN
 cudnn() {
 	echo Download and install cuDNN >> $SCRIPTDIR/next_action.txt
-	sudo apt -y install python3-pip python3-tk
-	sudo -H pip3 install numpy scipy matplotlib pillow
 }
 
 # Gnome Chrome shell

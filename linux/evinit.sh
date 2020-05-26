@@ -3,9 +3,8 @@
 # @Author  : garywei944 (garywei944@gmail.com)
 # @Link    : https://github.com/garywei944
 
-2>err.log exec
-
 SCRIPTDIR=$(cd $(dirname "${BASH_SOURCE[0]}") >/dev/null && pwd)
+2>$SCRIPTDIR/err.log exec
 
 . $SCRIPTDIR/src/evapt.sh
 . $SCRIPTDIR/src/evconfig.sh
@@ -19,10 +18,16 @@ common() {
 	config_terminal
 }
 
-ubuntu() {
+init() {
 	common
 	driver
-	python38
+
+	config_sudo_aris
+	config_sys
+}
+
+ubuntu() {
+	# python38
 	anaconda3
 	docker
 	albert
@@ -35,8 +40,6 @@ ubuntu() {
 	cudnn
 	gnome_chrome_shell
 
-	config_sudo_aris
-	config_sys
 	config_sublime
 	config_vagrant
 }
