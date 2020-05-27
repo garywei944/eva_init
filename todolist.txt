@@ -1,4 +1,4 @@
- ☐ Generate ssh private key
+ ✔ Generate ssh private key @done (20-05-25 19:53)
  ☐ Configure AWS tookit
  ✔ Configure Pycharm Keymap @done (20-05-24 14:49)
  ✔ Python 3.8 system link @done (20-05-21 18:32)

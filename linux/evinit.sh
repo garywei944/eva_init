@@ -3,12 +3,10 @@
 # @Author  : garywei944 (garywei944@gmail.com)
 # @Link    : https://github.com/garywei944
 
-2>err.log exec
-
 SCRIPTDIR=$(cd $(dirname "${BASH_SOURCE[0]}") >/dev/null && pwd)
 
-. src/evapt.sh
-. src/evconfig.sh
+. $SCRIPTDIR/src/evapt.sh
+. $SCRIPTDIR/src/evconfig.sh
 
 common() {
 	basic
@@ -19,29 +17,36 @@ common() {
 	config_terminal
 }
 
-ubuntu() {
+init() {
 	common
 	driver
-	python38
+
+	config_sudo_aris
+	config_sys
+}
+
+ubuntu() {
+	# python38
 	anaconda3
 	docker
 	albert
 	chrome
 	sublime
 	pycharm
-	vagrant
+	virtualbox
 	vmware
 	cuda
 	cudnn
 	gnome_chrome_shell
+	netease_music
 
-	config_sudo_aris
-	config_sys
 	config_sublime
+	# config_jetbrain
 	config_vagrant
 }
 
 wsl() {
+	sudo apt remove -y --purge openssh-server
 	common
 	config_sudo_aris
 	config_server
