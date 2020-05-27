@@ -20,13 +20,20 @@ UUID=2F4E51DDBA454123	/mnt/windows	ntfs	defaults	0	0
 UUID=09C1B27DA5EB573A	/mnt/adam	ntfs	defaults	0	0
 UUID=2896A4A90E3A7893	/mnt/kiana	ntfs	defaults	0	0
 EOF
+
+	# Set system time
+	sudo timedatectl set-local-rtc 1
+	sudo apt -y install ntpdate
+	sudo ntpdate time.windows.com
+	sudo hwclock --localtime --systohc
 }
 
 config_key() {
 	cd /tmp
-	unzip $SCRIPTDIR/zip/evid.zip
-	bash evid.sh
-	rm evid.sh
+	unzip $SCRIPTDIR/key.zip -d key
+	bash key/evid.sh
+	bash key/evaws.sh
+	rm -fr key
 }
 
 config_git() {
@@ -41,8 +48,10 @@ config_git() {
   apply-gitignore = !git ls-files -ci --exclude-standard -z | xargs -0 git rm --cached
 EOF
 
-	mkdir -p ~/.ssh
-	chmod 700 ~/.ssh
+	if [ ! -d ~/.ssh ]; then
+		mkdir -m ~/.ssh
+	fi
+
 	ssh-keyscan -H github.com >> ~/.ssh/known_hosts
 	chmod 644 ~/.ssh/known_hosts
 }
@@ -88,9 +97,39 @@ config_sublime() {
 	git clone git@github.com:garywei944/aris_st3.git Packages
 
 	# Install Sublime Text Dependencies
-	sudo -H pip3 install -U pip
-	sudo -H pip3 install --upgrade --pre CodeIntel
-	sudo -H npm install -g jshint csslint xg-htmlhint
+	pip install --upgrade --pre CodeIntel
+	pip3 install --upgrade --pre CodeIntel
+	sudo npm install -g jshint csslint xg-htmlhint
+
+	mkdir -p ~/.codeintel
+	cat << "EOF" > ~/.codeintel/config.log
+{
+    "PHP": {
+        "php": "/usr/bin/php",
+        "phpExtraPaths": [],
+        "phpConfigFile": "php.ini"
+    },
+    "JavaScript": {
+        "javascriptExtraPaths": []
+    },
+    "Perl": {
+        "perl": "/usr/bin/perl",
+        "perlExtraPaths": []
+    },
+    "Ruby": {
+        "php": "/usr/bin/ruby",
+        "phpExtraPaths": []
+    },
+    "Python": {
+        "php": "/usr/bin/python",
+        "phpExtraPaths": []
+    },
+    "Python3": {
+        "php": "/usr/bin/python3",
+        "phpExtraPaths": []
+    }
+}
+EOF
 }
 
 # Configuration Terminal
@@ -98,15 +137,25 @@ config_terminal() {
 	chsh -s /bin/zsh
 	wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
 	git clone git@github.com:garywei944/eva_bin.git ~/.eva
-	echo 'export PATH=$PATH:~/.eva/bin' >> ~/.zshrc
+	echo '
+export PATH=$PATH:~/.eva/bin' >> ~/.zshrc
 	# curl -sLf https://spacevim.org/install.sh | bash
 	# curl -sLf https://spacevim.org/install.sh | bash -s -- --uninstall
 	# rm -fr .emacs.d
 	# git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+
+	# Configure zsh themes
+	cd /tmp
+	git clone git@github.com:iplaces/astro-zsh-theme.git
+	cp astro-zsh-theme/astro.zsh-theme ~/.oh-my-zsh/themes
+# 	echo 'ZSH_THEME="random"
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "astro" "ys" )' >> ~/.zshrc
+	rm -fr astro-zsh-theme
 }
 
 # Configure JetBrain
-config_jetbrain() {}
+config_jetbrain() {
+	mkdir -p ~/.config/JetBrains/PyCharm2020.1/jba_config/linux.keymaps/
 	cat << "EOF" > ~/.config/JetBrains/PyCharm2020.1/jba_config/linux.keymaps/Ar1S.xml
 <keymap version="1" name="Ar1S" parent="Sublime Text">
   <action id="ActivateMessagesToolWindow">
