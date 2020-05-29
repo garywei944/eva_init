@@ -3,10 +3,10 @@
 # @Author  : garywei944 (garywei944@gmail.com)
 # @Link    : https://github.com/garywei944
 
-# Configure sudo aris without password
-config_sudo_aris() {
+# Configure sudo without password
+config_sudo() {
 	echo "Defaults	editor=/usr/bin/vim
-aris	ALL=(ALL)	NOPASSWD: ALL" | sudo tee -a /etc/sudoers
+$USER	ALL=(ALL)	NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 }
 
 # Configure System

@@ -53,23 +53,23 @@ anaconda3() {
 	wget https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh
 	sudo sh Anaconda3*
 	rm -f Anaconda3*
-	cat << "EOF" >> ~/.zshrc
+# 	cat << "EOF" >> ~/.zshrc
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/aris/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/aris/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/aris/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/aris/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-EOF
+# # >>> conda initialize >>>
+# # !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/home/aris/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/home/aris/anaconda3/etc/profile.d/conda.sh" ]; then
+#         . "/home/aris/anaconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/home/aris/anaconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+# # <<< conda initialize <<<
+# EOF
 }
 
 # GooleTest
@@ -88,7 +88,7 @@ gtest() {
 # Docker
 docker() {
 	sudo apt remove -y docker docker-engine docker.io containerd runc
-	sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+	sudo apt -y install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
 	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 	sudo apt-key fingerprint 0EBFCD88
 	sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
@@ -119,14 +119,14 @@ chrome() {
 
 # Sublime Text 3 & Sublime Merge
 sublime() {
-	sudo snap install sublime-text --classic
+	# sudo snap install sublime-text --classic
 	# sudo snap install sublime-merge --classic
 
 	wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 	sudo apt -y install apt-transport-https
 	echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 	sudo apt update
-	# sudo apt -y install sublime-text
+	sudo apt -y install sublime-text
 	sudo apt -y install sublime-merge
 }
 

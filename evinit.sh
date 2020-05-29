@@ -21,7 +21,7 @@ init() {
 	common
 	driver
 
-	config_sudo_aris
+	config_sudo
 	config_sys
 }
 
@@ -48,7 +48,7 @@ ubuntu() {
 wsl() {
 	sudo apt remove -y --purge openssh-server
 	common
-	config_sudo_aris
+	config_sudo
 	config_server
 }
 
