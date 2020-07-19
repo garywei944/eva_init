@@ -19,10 +19,12 @@ common() {
 
 init() {
 	common
+	disable_nouveau
 	# driver
 
 	config_sudo
 	config_sys
+	config_cuda_11
 }
 
 ubuntu() {
