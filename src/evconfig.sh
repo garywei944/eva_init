@@ -20,12 +20,14 @@ UUID=2F4E51DDBA454123	/mnt/windows	ntfs	defaults	0	0
 UUID=09C1B27DA5EB573A	/mnt/adam	ntfs	defaults	0	0
 UUID=2896A4A90E3A7893	/mnt/kiana	ntfs	defaults	0	0
 EOF
+}
 
-	# Set system time
-	sudo timedatectl set-local-rtc 1
-	sudo apt -y install ntpdate
-	sudo ntpdate time.windows.com
-	sudo hwclock --localtime --systohc
+config_time() {
+  # Set system time
+  sudo timedatectl set-local-rtc 1
+  sudo apt -y install ntpdate
+  sudo ntpdate time.windows.com
+  sudo hwclock --localtime --systohc
 }
 
 config_key() {
@@ -97,7 +99,7 @@ config_sublime() {
 	git clone git@github.com:garywei944/aris_st3.git Packages
 
 	# Install Sublime Text Dependencies
-	pip install --upgrade --pre CodeIntel
+	# pip install --upgrade --pre CodeIntel
 	pip3 install --upgrade --pre CodeIntel
 	sudo npm install -g jshint csslint xg-htmlhint
 
@@ -151,59 +153,6 @@ export PATH=$PATH:~/.eva/bin' >> ~/.zshrc
 # 	echo 'ZSH_THEME="random"
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "astro" "ys" )' >> ~/.zshrc
 	rm -fr astro-zsh-theme
-}
-
-# Configure JetBrain
-config_jetbrain() {
-	mkdir -p ~/.config/JetBrains/PyCharm2020.1/jba_config/linux.keymaps/
-	cat << "EOF" > ~/.config/JetBrains/PyCharm2020.1/jba_config/linux.keymaps/Ar1S.xml
-<keymap version="1" name="Ar1S" parent="Sublime Text">
-  <action id="ActivateMessagesToolWindow">
-    <keyboard-shortcut first-keystroke="alt 0" />
-    <keyboard-shortcut first-keystroke="ctrl back_quote" />
-  </action>
-  <action id="ActivateTerminalToolWindow">
-    <keyboard-shortcut first-keystroke="alt f12" />
-    <keyboard-shortcut first-keystroke="shift ctrl t" />
-  </action>
-  <action id="CMake.CompileCurrentFile" />
-  <action id="CloseAllEditors">
-    <keyboard-shortcut first-keystroke="shift ctrl w" />
-  </action>
-  <action id="Console.TableResult.SetNull" />
-  <action id="Debug">
-    <keyboard-shortcut first-keystroke="shift f9" />
-    <keyboard-shortcut first-keystroke="shift ctrl b" />
-  </action>
-  <action id="EditorSelectLine">
-    <keyboard-shortcut first-keystroke="ctrl l" />
-  </action>
-  <action id="FileChooser.NewFile">
-    <keyboard-shortcut first-keystroke="ctrl alt n" />
-  </action>
-  <action id="Inline" />
-  <action id="QuickChangeScheme" />
-  <action id="ReformatCode">
-    <keyboard-shortcut first-keystroke="ctrl alt f" />
-    <keyboard-shortcut first-keystroke="ctrl alt l" />
-  </action>
-  <action id="ReopenClosedTab" />
-  <action id="RestoreDefaultLayout">
-    <keyboard-shortcut first-keystroke="shift ctrl alt r" />
-  </action>
-  <action id="Run">
-    <keyboard-shortcut first-keystroke="shift f10" />
-    <keyboard-shortcut first-keystroke="ctrl b" />
-  </action>
-  <action id="ServiceView.ShowServices" />
-  <action id="SplitVertically">
-    <keyboard-shortcut first-keystroke="shift alt 2" />
-  </action>
-  <action id="UnsplitAll">
-    <keyboard-shortcut first-keystroke="shift alt 1" />
-  </action>
-</keymap>
-EOF
 }
 
 # Configure Vagrant

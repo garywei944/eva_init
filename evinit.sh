@@ -19,29 +19,30 @@ common() {
 
 init() {
 	common
-	driver
+	# driver
 
 	config_sudo
 	config_sys
 }
 
 ubuntu() {
-	# python38
-	anaconda3
-	docker
-	albert
 	chrome
 	sublime
-	pycharm
-	virtualbox
-	vmware
-	cuda
-	cudnn
+	docker
+	albert
 	gnome_chrome_shell
-	netease_music
+	neteas5e_music
+	gparted
+	kazam
+	pymol
+	vlc
+	mediacodecs
+	tweaks
+	wine
+	steam
+	timeshift
 
 	config_sublime
-	# config_jetbrain
 	config_vagrant
 }
 
