@@ -24,6 +24,9 @@ basic() {
 
 	# Beta
 	sudo apt -y install rsync shc zsh-doc
+
+	# CUDA 3rd party Library
+	sudo apt -y install g++ freeglut3-dev build-essential libx11-dev libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev
 }
 
 # Driver
