@@ -33,15 +33,14 @@ ubuntu() {
 	docker
 	albert
 	gnome_chrome_shell
-	neteas5e_music
+	netease_music
 	gparted
 	kazam
 	pymol
 	vlc
-	mediacodecs
 	tweaks
 	wine
-	steam
+	# steam
 	timeshift
 
 	config_sublime

@@ -23,7 +23,7 @@ basic() {
 	# sudo apt -y install python-pip
 
 	# Beta
-	sudo apt -y install rsync shc zsh-doc
+	sudo apt -y install rsync shc zsh-doc ubuntu-restricted-extras
 
 	# CUDA 3rd party Library
 	sudo apt -y install g++ freeglut3-dev build-essential libx11-dev libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev
@@ -132,11 +132,6 @@ pymol() {
 # VLC
 vlc() {
 	sudo snap install vlc
-}
-
-# MediaCodecs
-mediacodecs() {
-	sudo apt -y install ubuntu-restricted-extras
 }
 
 # GNome Tweaks
