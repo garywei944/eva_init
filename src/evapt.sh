@@ -155,3 +155,8 @@ timeshift() {
 	sudo apt update
 	sudo apt -y install timeshift
 }
+
+# Discord
+discord() {
+	sudo snap install discord
+}

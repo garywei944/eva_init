@@ -33,9 +33,10 @@ ubuntu() {
 	docker
 	albert
 	gnome_chrome_shell
-	netease_music
 	gparted
 	kazam
+	netease_music
+	discord
 	pymol
 	vlc
 	tweaks
