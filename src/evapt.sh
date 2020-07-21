@@ -23,7 +23,7 @@ basic() {
 	# sudo apt -y install python-pip
 
 	# Beta
-	sudo apt -y install rsync shc zsh-doc ubuntu-restricted-extras
+	sudo apt -y install rsync shc zsh-doc ubuntu-restricted-extras jq
 
 	# CUDA 3rd party Library
 	sudo apt -y install g++ freeglut3-dev build-essential libx11-dev libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev
