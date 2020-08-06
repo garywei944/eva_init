@@ -16,9 +16,9 @@ config_sys() {
 	cd /mnt
 	sudo mkdir windows adam kiana
 	cat << "EOF" | sudo tee -a /etc/fstab
-UUID=2F4E51DDBA454123	/mnt/windows	ntfs	defaults	0	0
-UUID=09C1B27DA5EB573A	/mnt/adam	ntfs	defaults	0	0
-UUID=2896A4A90E3A7893	/mnt/kiana	ntfs	defaults	0	0
+UUID=2F4E51DDBA454123	/mnt/windows	ntfs	rw,auto,user,fmask=133,dmask=022,uid=1000,gid=1000	0	0
+UUID=09C1B27DA5EB573A	/mnt/adam	ntfs	rw,auto,user,fmask=133,dmask=022,uid=1000,gid=1000	0	0
+UUID=2896A4A90E3A7893	/mnt/kiana	ntfs	rw,auto,user,fmask=133,dmask=022,uid=1000,gid=1000	0	0
 EOF
 }
 
