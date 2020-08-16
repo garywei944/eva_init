@@ -19,6 +19,7 @@ common() {
 
 init() {
 	common
+	apt_cuda
 	disable_nouveau
 	# driver
 

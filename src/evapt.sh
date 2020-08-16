@@ -9,12 +9,17 @@ update() {
 	sudo apt -y dist-upgrade
 }
 
+apt_beta() {
+	# Beta
+	sudo apt -y install rsync shc zsh-doc ubuntu-restricted-extras jq
+}
+
 # Basic Runtime Environments
 basic() {
 	update
 
 	# System Essentials
-	sudo apt -y install zsh screen net-tools openssh-server wget curl zip rar unrar p7zip-full p7zip-rar dos2unix
+	sudo apt -y install zsh screen net-tools openssh-server wget curl zip rar unrar p7zip-full p7zip-rar dos2unix htop
 
 	# Development Runtimes
 	sudo apt -y install emacs vim git git-flow build-essential default-jdk python python3 python3-pip virtualenv python3-venv nodejs npm cmake clang gdb valgrind ctags
@@ -22,9 +27,10 @@ basic() {
 	# Deprecated
 	# sudo apt -y install python-pip
 
-	# Beta
-	sudo apt -y install rsync shc zsh-doc ubuntu-restricted-extras jq
+	apt_beta
+}
 
+apt_cuda() {
 	# CUDA 3rd party Library
 	sudo apt -y install g++ freeglut3-dev build-essential libx11-dev libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev
 }
