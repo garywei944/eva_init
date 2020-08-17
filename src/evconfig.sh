@@ -102,6 +102,7 @@ config_sublime() {
 	# pip install --upgrade --pre CodeIntel
 	pip3 install --upgrade --pre CodeIntel
 	sudo npm install -g jshint csslint xg-htmlhint
+	sudo npm install -g browser-sync
 
 	mkdir -p ~/.codeintel
 	cat << "EOF" > ~/.codeintel/config.log
