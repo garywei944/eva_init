@@ -19,7 +19,7 @@ basic() {
 	update
 
 	# System Essentials
-	sudo apt -y install zsh screen net-tools openssh-server wget curl zip rar unrar p7zip-full p7zip-rar dos2unix htop
+	sudo apt -y install zsh screen net-tools openssh-server wget curl zip rar unrar p7zip-full p7zip-rar dos2unix htop traceroute
 
 	# Development Runtimes
 	sudo apt -y install emacs vim git git-flow build-essential default-jdk python python3 python3-pip virtualenv python3-venv nodejs npm cmake clang gdb valgrind ctags
