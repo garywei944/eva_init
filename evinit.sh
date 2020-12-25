@@ -12,6 +12,7 @@ common() {
 	basic
 	gtest
 
+	config_sudo
 	config_key
 	config_git
 	config_terminal
@@ -23,7 +24,6 @@ init() {
 	disable_nouveau
 	# driver
 
-	config_sudo
 	config_sys
 	config_cuda_11
 }
@@ -52,7 +52,6 @@ ubuntu() {
 wsl() {
 	sudo apt remove -y --purge openssh-server
 	common
-	config_sudo
 	config_server
 }
 
