@@ -105,6 +105,11 @@ sublime() {
 	sudo apt -y install sublime-merge
 }
 
+# shadowsocks
+shadowsocks() {
+	sudo apt -y install shadowsocks-libev
+}
+
 # PyCharm Professional
 pycharm() {
 	sudo snap install pycharm-professional --classic

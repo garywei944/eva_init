@@ -22,7 +22,7 @@ init() {
 	common
 	apt_cuda
 	disable_nouveau
-	# driver
+	driver
 
 	config_sys
 	config_cuda_11
@@ -42,7 +42,7 @@ ubuntu() {
 	vlc
 	tweaks
 	wine
-	# steam
+	steam
 	timeshift
 
 	config_sublime
@@ -62,6 +62,9 @@ vagrant() {
 
 server() {
 	common
+	shadowsocks
+
+	config_shadowsocks
 }
 
 for cmd in $@; do

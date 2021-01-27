@@ -169,7 +169,7 @@ EOF
 
 # Disable Nouveau
 disable_nouveau() {
-  sudo cat << "EOF" > /etc/modprobe.d/blacklist-nouveau.conf
+	sudo cat << "EOF" > /etc/modprobe.d/blacklist-nouveau.conf
 blacklist nouveau
 options nouveau modeset=0
 EOF
@@ -178,8 +178,15 @@ EOF
 
 # Configure cuda 11
 config_cuda_11() {
-  cat << "EOF" >> ~/.bashrc
+	cat << "EOF" >> ~/.bashrc
 export PATH=/usr/local/cuda-11.0/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda-11.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 EOF
+}
+
+# Configure shadowsocks
+config_shadowsocks() {
+	sudo vim /etc/shadowsocks-libev/config.json
+	sudo systemctl restart shadowsocks-libev.service
+	sudo systemctl enable shadowsocks-libev.service
 }
