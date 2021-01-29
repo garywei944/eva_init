@@ -11,7 +11,7 @@ update() {
 
 apt_beta() {
 	# Beta
-	sudo apt -y install rsync shc zsh-doc ubuntu-restricted-extras jq
+	sudo apt -y install rsync shc zsh-doc jq
 }
 
 # Basic Runtime Environments
