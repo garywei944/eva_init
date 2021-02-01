@@ -41,7 +41,7 @@ config_key() {
 }
 
 config_git() {
-	cat << "EOF" >> ~/.gitconfig
+	cat << "EOF" > ~/.gitconfig
 [user]
 	name = garywei944
 	email = 33930674+garywei944@users.noreply.github.com
