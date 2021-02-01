@@ -5,6 +5,7 @@
 
 SCRIPTDIR=$(cd $(dirname "${BASH_SOURCE[0]}") >/dev/null && pwd)
 
+# Load functions
 . $SCRIPTDIR/src/evapt.sh
 . $SCRIPTDIR/src/evconfig.sh
 
@@ -25,25 +26,25 @@ init() {
 	driver
 
 	config_sys
+	config_time
 	config_cuda_11
 }
 
 ubuntu() {
+	apt_desktop
+
 	chrome
 	sublime
 	docker
 	albert
-	gnome_chrome_shell
-	gparted
-	kazam
 	netease_music
 	discord
 	pymol
-	vlc
 	tweaks
 	wine
 	steam
 	timeshift
+	metasploit
 
 	config_sublime
 	config_vagrant
@@ -52,6 +53,7 @@ ubuntu() {
 wsl() {
 	sudo apt remove -y --purge openssh-server
 	common
+
 	config_server
 }
 
@@ -62,7 +64,6 @@ vagrant() {
 
 server() {
 	common
-	shadowsocks
 
 	config_shadowsocks
 }

@@ -9,25 +9,27 @@ update() {
 	sudo apt -y dist-upgrade
 }
 
-apt_beta() {
-	# Beta
-	sudo apt -y install rsync shc zsh-doc jq
+apt_desktop() {
+	sudo apt -y install ubuntu-restricted-extras scrot flameshot gparted kazam vlc
 }
 
 # Basic Runtime Environments
 basic() {
 	update
 
+	sudo add-apt-repository -y ppa:bashtop-monitor/bashtop
+	sudo add-apt-repository -y ppa:lazygit-team/release
+
+	sudo apt update
+
 	# System Essentials
-	sudo apt -y install zsh screen net-tools openssh-server wget curl zip dos2unix htop traceroute
+	sudo apt -y install git zsh screen net-tools openssh-server wget curl zip rar unrar dos2unix htop bashtop traceroute shadowsocks-libev lazygit rsync jq shc
 
 	# Development Runtimes
 	sudo apt -y install emacs vim git git-flow build-essential default-jdk python python3 python3-pip virtualenv python3-venv nodejs npm cmake clang gdb valgrind ctags
 
 	# Deprecated
 	# sudo apt -y install python-pip
-
-	apt_beta
 }
 
 apt_cuda() {
@@ -68,7 +70,7 @@ docker() {
 # Albert
 albert() {
 	# Ubuntu 18.04
-	# yes | sudo add-apt-repository ppa:noobslab/macbuntu
+	# yes | sudo add-apt-repository -y ppa:noobslab/macbuntu
 	# sudo apt update
 	# sudo apt -y install albert
 
@@ -90,6 +92,9 @@ chrome() {
 	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 	sudo apt -y install ./google-chrome-stable_current_amd64.deb
 	rm -f google-chrome-stable_current_amd64.deb
+
+	# Gnome Chrome shell
+	sudo apt -y install chrome-gnome-shell gnome-screensaver
 }
 
 # Sublime Text 3 & Sublime Merge
@@ -105,44 +110,14 @@ sublime() {
 	sudo apt -y install sublime-merge
 }
 
-# shadowsocks
-shadowsocks() {
-	sudo apt -y install shadowsocks-libev
-}
-
-# PyCharm Professional
-pycharm() {
-	sudo snap install pycharm-professional --classic
-}
-
-# Gnome Chrome shell
-gnome_chrome_shell() {
-	sudo apt -y install chrome-gnome-shell gnome-screensaver
-}
-
 # Netease Music
 netease_music() {
 	sudo snap install netease-music --beta --devmode
 }
 
-# GParted
-gparted() {
-	sudo apt -y install gparted
-}
-
-# Kazam
-kazam() {
-	sudo apt -y install kazam
-}
-
 # PyMol
 pymol() {
 	sudo apt -y install pymol
-}
-
-# VLC
-vlc() {
-	sudo snap install vlc
 }
 
 # GNome Tweaks
