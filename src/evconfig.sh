@@ -43,13 +43,15 @@ config_key() {
 config_git() {
 	cat << "EOF" >> ~/.gitconfig
 [user]
-  name = garywei944
-  email = 33930674+garywei944@users.noreply.github.com
+	name = garywei944
+	email = 33930674+garywei944@users.noreply.github.com
 [core]
-  editor = vim
-  autocrlf = input
+	editor = vim
+	autocrlf = input
+[init]
+	defaultBranch = main
 [alias]
-  apply-gitignore = !git ls-files -ci --exclude-standard -z | xargs -0 git rm --cached
+	apply-gitignore = !git ls-files -ci --exclude-standard -z | xargs -0 git rm --cached
 EOF
 
 	if [ ! -d ~/.ssh ]; then
