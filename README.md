@@ -1,7 +1,7 @@
 # eva_bin
 
 ## Overview
-`evinit.sh` is used to initialize many kinds of Ubuntu 18 instance including my personal laptop, WSL, vagrant, or server instances. It installs necessary dependencies and applications and sets up configurations according to my preference automatically.
+`evinit.sh` is used to initialize many kinds of Ubuntu 20 instances including my PC(Pure Ubuntu), WSL, vagrant, or server instances(AWS EC3, Vultr.com server, etc). It installs necessary dependencies and applications and sets up configurations according to my preference.
 
 ## Usage
 1. Open Terminal and `cd` into the directory containing `evinit.sh`
