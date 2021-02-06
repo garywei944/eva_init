@@ -12,6 +12,7 @@ SCRIPTDIR=$(cd $(dirname "${BASH_SOURCE[0]}") >/dev/null && pwd)
 common() {
 	basic
 	gtest
+	awscliv2
 
 	config_sudo
 	config_key
