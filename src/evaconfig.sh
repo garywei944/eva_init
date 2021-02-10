@@ -1,5 +1,5 @@
 #!/bin/bash
-# evconfig.sh
+# evaconfig.sh
 # @Author  : garywei944 (garywei944@gmail.com)
 # @Link    : https://github.com/garywei944
 
@@ -35,8 +35,8 @@ config_time() {
 config_key() {
 	cd /tmp
 	unzip $SCRIPTDIR/key.zip -d key
-	bash key/evid.sh
-	bash key/evaws.sh
+	bash key/evaid.sh
+	bash key/evaaws.sh
 	rm -fr key
 }
 

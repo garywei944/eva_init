@@ -1,13 +1,13 @@
 #!/bin/bash
-# evinit.sh
+# evainit.sh
 # @Author  : garywei944 (garywei944@gmail.com)
 # @Link    : https://github.com/garywei944
 
 SCRIPTDIR=$(cd $(dirname "${BASH_SOURCE[0]}") >/dev/null && pwd)
 
 # Load functions
-. $SCRIPTDIR/src/evapt.sh
-. $SCRIPTDIR/src/evconfig.sh
+. $SCRIPTDIR/src/evaapt.sh
+. $SCRIPTDIR/src/evaconfig.sh
 
 common() {
 	basic
