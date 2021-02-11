@@ -1,0 +1,13 @@
+name: eva
+channels:
+  - defaults
+  - pytorch
+  - conda-forge
+dependencies:
+  - anaconda=2020.11
+  - pytorch
+  - torchvision
+  - torchaudio
+  - cudatoolkit=11.0
+  - opencv
+  - imbalanced-learn
