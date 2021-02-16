@@ -14,7 +14,7 @@ config_sys() {
 	sudo vim /etc/default/grub
 	sudo update-grub
 	cd /mnt
-	sudo mkdir windows adam kiana
+	sudo mkdir windows adam kiana misaki asuka
 	cat << "EOF" | sudo tee -a /etc/fstab
 UUID=7F0FDC9BCBEDF510	/mnt/windows	ntfs	rw,auto,user,fmask=133,dmask=022,uid=1000,gid=1000	0	0
 UUID=09C1B27DA5EB573A	/mnt/adam	ntfs	rw,auto,user,fmask=133,dmask=022,uid=1000,gid=1000	0	0
