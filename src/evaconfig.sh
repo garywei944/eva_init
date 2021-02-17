@@ -16,11 +16,11 @@ config_sys() {
 	cd /mnt
 	sudo mkdir windows adam kiana misaki asuka
 	cat << "EOF" | sudo tee -a /etc/fstab
-UUID=7F0FDC9BCBEDF510	/mnt/windows	ntfs	rw,auto,user,fmask=133,dmask=022,uid=1000,gid=1000	0	0
-UUID=09C1B27DA5EB573A	/mnt/adam	ntfs	rw,auto,user,fmask=133,dmask=022,uid=1000,gid=1000	0	0
-UUID=2896A4A90E3A7893	/mnt/kiana	ntfs	rw,auto,user,fmask=133,dmask=022,uid=1000,gid=1000	0	0
-UUID=8A6C65FA6C65E185	/mnt/misaki	ntfs	rw,auto,user,fmask=133,dmask=022,uid=1000,gid=1000	0	0
-UUID=41CCDE9622B9FB35	/mnt/asuka	ntfs	rw,auto,user,fmask=133,dmask=022,uid=1000,gid=1000	0	0
+UUID=7F0FDC9BCBEDF510	/mnt/windows	ntfs	rw,auto,user,nls=utf8,fmask=133,dmask=022,uid=1000,gid=1000,windows_names	0	0
+UUID=09C1B27DA5EB573A	/mnt/adam	ntfs	rw,auto,user,nls=utf8,fmask=133,dmask=022,uid=1000,gid=1000,windows_names	0	0
+UUID=2896A4A90E3A7893	/mnt/kiana	ntfs	rw,auto,user,nls=utf8,fmask=133,dmask=022,uid=1000,gid=1000,windows_names	0	0
+UUID=8A6C65FA6C65E185	/mnt/misaki	ntfs	rw,auto,user,nls=utf8,fmask=133,dmask=022,uid=1000,gid=1000,windows_names	0	0
+UUID=2AC6BD23C6BCEFE5	/mnt/asuka	ntfs	rw,auto,user,nls=utf8,fmask=133,dmask=022,uid=1000,gid=1000,windows_names	0	0
 EOF
 }
 
@@ -33,8 +33,8 @@ config_time() {
 }
 
 config_key() {
-	cd /tmp
-	unzip $SCRIPTDIR/key.zip -d key
+	cd /tmp || exit
+	unzip "$SCRIPTDIR"/key.zip -d key
 	bash key/evaid.sh
 	bash key/evaaws.sh
 	rm -fr key
@@ -63,7 +63,7 @@ EOF
 }
 
 config_server() {
-	cd ~/.ssh
+	cd ~/.ssh || exit
 	cat id_rsa.pub >> authorized_keys
 	chmod 600 authorized_keys
 }
@@ -94,9 +94,9 @@ EOF
 
 # Configure Sublime Text
 config_sublime() {
-	cd ~/.config
+	cd ~/.config || exit
 	mkdir -p sublime-text-3/Installed\ Packages
-	cd sublime-text-3/Installed\ Packages
+	cd sublime-text-3/Installed\ Packages || exit
 	wget https://packagecontrol.io/Package%20Control.sublime-package -O Package\ Control.sublime-package
 	cd ..
 	rm -fr Packages
@@ -144,12 +144,12 @@ config_terminal() {
 	chsh -s /bin/zsh
 	wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
 	git clone git@github.com:garywei944/eva_bin.git ~/.eva
-	echo '
-export PATH=$PATH:~/.eva/bin' >> ~/.zshrc
+	echo "
+export PATH=\$PATH:~/.eva/bin" >> ~/.zshrc
 	# curl -sLf https://spacevim.org/install.sh | bash
 	# curl -sLf https://spacevim.org/install.sh | bash -s -- --uninstall
-	# rm -fr .emacs.d
-	# git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+	rm -fr .emacs.d
+	git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 	# Configure zsh themes
 	cd /tmp

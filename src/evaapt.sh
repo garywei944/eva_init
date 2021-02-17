@@ -32,6 +32,8 @@ basic() {
 	# Development Runtimes
 	sudo apt -y install emacs vim git git-flow build-essential default-jdk python python3 python3-pip virtualenv python3-venv nodejs npm cmake clang gdb valgrind ctags
 
+	sudo snap install --classic heroku
+
 	# Deprecated
 	# sudo apt -y install python-pip
 }
@@ -49,9 +51,9 @@ driver() {
 # GooleTest
 gtest() {
 	sudo apt -y install libgtest-dev
-	cd /usr/src/googletest
+	cd /usr/src/googletest || exit
 	sudo mkdir build
-	cd build
+	cd build || exit
 	sudo cmake ..
 	sudo make
 	sudo make install
@@ -75,7 +77,7 @@ docker() {
 	sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 	sudo apt update
 	sudo apt -y install docker-ce docker-ce-cli containerd.io
-	sudo gpasswd -a ${USER} docker
+	sudo gpasswd -a "${USER}" docker
 }
 
 # Albert
@@ -99,7 +101,7 @@ albert() {
 
 # Chrome
 chrome() {
-	cd /tmp
+	cd /tmp || exit
 	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 	sudo apt -y install ./google-chrome-stable_current_amd64.deb
 	rm -f google-chrome-stable_current_amd64.deb
