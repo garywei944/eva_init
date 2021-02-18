@@ -1,9 +1,6 @@
 #!/bin/bash
-# evainit.sh
-# @Author  : garywei944 (garywei944@gmail.com)
-# @Link    : https://github.com/garywei944
 
-SCRIPTDIR=$(cd $(dirname "${BASH_SOURCE[0]}") >/dev/null && pwd)
+SCRIPTDIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null && pwd)
 
 # Load functions
 . $SCRIPTDIR/src/evaapt.sh
@@ -69,6 +66,6 @@ server() {
 	config_shadowsocks
 }
 
-for cmd in $@; do
+for cmd in "$@"; do
 	$cmd
 done
