@@ -46,7 +46,7 @@ config_git() {
 	name = garywei944
 	email = 33930674+garywei944@users.noreply.github.com
 [core]
-	editor = vim
+	editor = emacs -nw
 	autocrlf = input
 [init]
 	defaultBranch = main
