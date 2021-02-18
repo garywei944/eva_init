@@ -141,23 +141,21 @@ EOF
 
 # Configuration Terminal
 config_terminal() {
+  # Configure zsh
   chsh -s /bin/zsh
   wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
-  git clone git@github.com:garywei944/eva_bin.git ~/.eva
-  echo "
-export PATH=\$PATH:~/.eva/bin" >>~/.zshrc
-  # curl -sLf https://spacevim.org/install.sh | bash
-  # curl -sLf https://spacevim.org/install.sh | bash -s -- --uninstall
+  git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+  wget https://raw.githubusercontent.com/iplaces/astro-zsh-theme/master/astro.zsh-theme -o ~/.oh-my-zsh/custom/themes/astro.zsh-theme
+  # TODO: .zshrc
+
+  # Configure emacs
   rm -fr .emacs.d
   git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+  # curl -sLf https://spacevim.org/install.sh | bash
+  # curl -sLf https://spacevim.org/install.sh | bash -s -- --uninstall
 
-  # Configure zsh themes
-  cd /tmp || exit
-  git clone git@github.com:iplaces/astro-zsh-theme.git
-  cp astro-zsh-theme/astro.zsh-theme ~/.oh-my-zsh/themes
-  # 	echo 'ZSH_THEME="random"
-  # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "astro" "ys" )' >> ~/.zshrc
-  rm -fr astro-zsh-theme
+  git clone git@github.com:garywei944/eva_bin.git ~/.eva
 }
 
 # Configure Vagrant
