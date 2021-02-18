@@ -1,0 +1,10 @@
+[user]
+	name = garywei944
+	email = 33930674+garywei944@users.noreply.github.com
+[core]
+	editor = emacs -nw
+	autocrlf = input
+[init]
+	defaultBranch = main
+[alias]
+	apply-gitignore = !git ls-files -ci --exclude-standard -z | xargs -0 git rm --cached

@@ -1,23 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Make sure that $PWD is the directory of the script
 EVA_ROOT=$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null && pwd)
+CONFIG_DIR="$EVA_ROOT"/config
+
 cd "$EVA_ROOT" || exit
-
-# Load functions
-. src/evaapt.sh
-. src/evaconfig.sh
-
-common() {
-  basic
-  gtest
-  awscliv2
-
-  config_sudo
-  config_key
-  config_git
-  config_terminal
-}
 
 init() {
   common
@@ -28,26 +15,6 @@ init() {
   config_sys
   config_time
   config_cuda_11
-}
-
-ubuntu() {
-  apt_desktop
-
-  chrome
-  sublime
-  docker
-  albert
-  netease_music
-  discord
-  pymol
-  tweaks
-  wine
-  steam
-  timeshift
-  metasploit
-
-  config_sublime
-  config_vagrant
 }
 
 wsl() {
