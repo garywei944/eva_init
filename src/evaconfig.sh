@@ -40,27 +40,7 @@ config_key() {
   rm -fr key
 }
 
-config_git() {
-  cat <<"EOF" >~/.gitconfig
-[user]
-	name = garywei944
-	email = 33930674+garywei944@users.noreply.github.com
-[core]
-	editor = emacs -nw
-	autocrlf = input
-[init]
-	defaultBranch = main
-[alias]
-	apply-gitignore = !git ls-files -ci --exclude-standard -z | xargs -0 git rm --cached
-EOF
 
-  if [ ! -d ~/.ssh ]; then
-    mkdir -m ~/.ssh
-  fi
-
-  ssh-keyscan -H github.com >>~/.ssh/known_hosts
-  chmod 644 ~/.ssh/known_hosts
-}
 
 config_server() {
   cd ~/.ssh || exit

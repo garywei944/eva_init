@@ -1,2 +1,4 @@
 /.idea
-/keys
+/keys/*
+!/keys/init_keys.sh
+!/keys/keys.zip

@@ -3,81 +3,17 @@
 # @Author  : garywei944 (garywei944@gmail.com)
 # @Link    : https://github.com/garywei944
 
-update() {
-  sudo apt update
-  sudo apt -y dist-upgrade
-}
 
-apt_desktop() {
-  sudo apt -y install ubuntu-restricted-extras scrot flameshot gparted kazam vlc
-}
-
-# Basic Runtime Environments
-basic() {
-  update
-
-  # Add necessary repository
-  sudo add-apt-repository -y ppa:bashtop-monitor/bashtop
-  sudo add-apt-repository -y ppa:lazygit-team/release
-
-  sudo apt update
-
-  # System Essentials
-  sudo apt -y install git zsh screen net-tools openssh-server wget curl zip rar unrar dos2unix htop bashtop traceroute shadowsocks-libev lazygit rsync jq shc
-
-  # Repository for node 14
-  curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-
-  # Development Runtimes
-  sudo apt -y install emacs vim git git-flow build-essential default-jdk python python3 python3-pip virtualenv python3-venv nodejs npm cmake clang gdb valgrind ctags
-
-  sudo snap install --classic heroku
-
-  # Deprecated
-  # sudo apt -y install python-pip
-}
-
-apt_cuda() {
-  # CUDA 3rd party Library
-  sudo apt -y install g++ freeglut3-dev build-essential libx11-dev libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev
-}
 
 # Driver
 driver() {
   sudo ubuntu-drivers autoinstall
 }
 
-# GooleTest
-gtest() {
-  sudo apt -y install libgtest-dev
-  cd /usr/src/googletest || exit
-  sudo mkdir build
-  cd build || exit
-  sudo cmake ..
-  sudo make
-  sudo make install
-  sudo ln -fs /usr/local/lib/libgtest.a /usr/lib/libgtest.a
-  sudo ln -fs /usr/local/lib/libgtest_main.a /usr/lib/libgtest_main.a
-}
 
-# AWS CLI version 2
-awscliv2() {
-  curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-  unzip awscliv2.zip
-  sudo ./aws/install
-}
 
-# Docker
-docker() {
-  sudo apt remove -y docker docker-engine docker.io containerd runc
-  sudo apt -y install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
-  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-  # sudo apt-key fingerprint 0EBFCD88
-  sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-  sudo apt update
-  sudo apt -y install docker-ce docker-ce-cli containerd.io
-  sudo gpasswd -a "${USER}" docker
-}
+
+
 
 # Albert
 albert() {
