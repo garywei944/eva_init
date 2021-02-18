@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Make sure that $PWD is the directory of the script
-DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null && pwd)
-cd "$DIR" || exit
+EVA_ROOT=$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null && pwd)
+cd "$EVA_ROOT" || exit
 
 # Load functions
 . src/evaapt.sh
