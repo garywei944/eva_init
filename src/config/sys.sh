@@ -43,9 +43,7 @@ config_git() {
 
 # Configure conda environment
 config_conda() {
-  # Please make sure that anaconda or miniconda is installed in the system
   cp -f "$CONFIG_DIR"/.condarc ~
-  conda env create -f "$CONFIG_DIR"
 }
 
 # Configure Vagrant
