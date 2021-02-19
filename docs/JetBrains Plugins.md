@@ -51,7 +51,6 @@
 * Database Navigator
 * Ideolog
 * JavaFX Runtime for Plugins
-* Kite AI Code autocomplete
 * Kubernetes
 * Live Edit
 * Rust

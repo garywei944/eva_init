@@ -1,12 +1,12 @@
-# Manually Install Softwares
+# Manually Install Software
 
-1. NVIDIA
+1. NVIDIA driver
 2. CUDA + Cudnn
 3. vmware
 4. Virtual Box
-5. Anaconda
-6. PyCharm
-7. Zoom
-8. TeamViewer
-9. XMind
-10. Kite
+5. Vagrant
+6. Anaconda
+7. Jetbrains IDE set
+8. fcitx + sougou input
+9. Zoom
+10. TeamViewer

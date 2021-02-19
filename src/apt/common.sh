@@ -34,7 +34,7 @@ basic() {
 }
 
 apt_desktop() {
-  sudo apt -y install ubuntu-restricted-extras scrot flameshot gparted kazam vlc
+  sudo apt -y install ubuntu-restricted-extras scrot flameshot gparted kazam vlc gpicview
 }
 
 apt_cuda() {
