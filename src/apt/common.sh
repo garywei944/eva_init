@@ -18,11 +18,14 @@ basic() {
   # System Essentials
   sudo apt -y install git zsh screen net-tools openssh-server wget curl zip rar unrar dos2unix htop bashtop traceroute shadowsocks-libev lazygit rsync jq shc
 
-  # Repository for node 14
-  curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-
   # Development Runtimes
-  sudo apt -y install emacs vim git git-flow build-essential default-jdk python python3 python3-pip virtualenv python3-venv nodejs npm cmake clang gdb valgrind ctags
+  sudo apt -y install emacs vim git git-flow build-essential default-jdk python python3 python3-pip virtualenv python3-venv cmake clang gdb valgrind ctags checkinstall
+
+  # Install nodejs and update to latest
+  sudo apt -y install nodejs npm
+  npm cache clean -f
+  sudo npm install -g n
+  sudo n stable
 
   sudo snap install --classic heroku
 

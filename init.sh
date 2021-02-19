@@ -11,7 +11,7 @@ CONFIG_DIR="$EVA_ROOT"/config
 cd "$EVA_ROOT" || exit
 
 # Make alias
-alias config_keys=./keys/init_keys.sh
+config_keys() { ./keys/init_keys.sh; }
 
 # Load functions
 . ./src/init_config.sh
