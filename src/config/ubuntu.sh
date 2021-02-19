@@ -18,6 +18,11 @@ config_time() {
   sudo hwclock --localtime --systohc
 }
 
+# Driver
+driver() {
+  sudo ubuntu-drivers autoinstall
+}
+
 # Disable Nouveau
 disable_nouveau() {
   cat <<"EOF" | sudo tee /etc/modprobe.d/blacklist-nouveau.conf >/dev/null
