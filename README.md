@@ -16,7 +16,20 @@ TODO: README to be updated
   
 Note that this is not the full list of `<commands>`. It could be any function defined in `evainit.sh`, `src/evaapt.sh`, and `evaconfig.sh`.
 
+## Optional apps
+* chrome
+* docker
+* albert
+* netease_music
+* discord
+* pymol
+* tweaks
+* wine
+* steam
+* timeshift
+* metasploit
+
 ## Optional commands
-* `disable_nouveau`
 * `driver`
+* `disable_nouveau`
 * `config_cuda_11`
