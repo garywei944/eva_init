@@ -3,54 +3,60 @@
 common() {
   basic
   gtest
-  awscliv2
+  awscli
 
   config_sudo
-  config_key
+  config_keys
   config_git
   config_terminal
+  config_vim
+  config_conda
 }
 
-ubuntu() {
+ariseus() {
   common
-
   apt_cuda
-  disable_nouveau
-  driver
 
   config_sys
   config_time
-  config_cuda_11
 
   apt_desktop
-
-  chrome
   sublime
-  docker
-  albert
-  netease_music
-  discord
-  pymol
-  tweaks
-  wine
-  steam
-  timeshift
-  metasploit
 
   config_sublime
   config_vagrant
+
+  local app
+  while read -r app; do
+    $app
+  done <"$EVA_ROOT"/optional_apps.txt
+}
+
+desktop() {
+  common
+
+  apt_desktop
+  sublime
+
+  config_sublime
+
+  local app
+  while read -r app; do
+    $app
+  done <"$EVA_ROOT"/optional_apps.txt
 }
 
 server() {
   common
 
-  config_shadowsocks
+  config_shadowsocks_server
 }
 
 wsl() {
   sudo apt remove -y --purge openssh-server
   common
 
+  config_wsl
   config_server
 }
 

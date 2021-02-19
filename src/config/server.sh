@@ -7,7 +7,7 @@ config_server() {
 }
 
 # Configure shadowsocks
-config_shadowsocks() {
+config_shadowsocks_server() {
   sudo vim /etc/shadowsocks-libev/config.json
   sudo systemctl restart shadowsocks-libev.service
   sudo systemctl enable shadowsocks-libev.service

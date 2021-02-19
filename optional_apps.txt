@@ -1,0 +1,11 @@
+chrome
+docker
+albert
+netease_music
+discord
+pymol
+tweaks
+wine
+steam
+timeshift
+metasploit

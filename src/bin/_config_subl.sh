@@ -11,4 +11,4 @@ git clone git@github.com:garywei944/aris_st3.git Packages
 
 # Configure codeintel
 mkdir -p ~/.codeintel
-cat <"$CONFIG_DIR"/config.lg >~/.codeintel/config.log
+cat <"$CONFIG_DIR"/config.log >~/.codeintel/config.log
