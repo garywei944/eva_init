@@ -15,12 +15,13 @@ config_terminal() {
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
   cp -f "$CONFIG_DIR"/.zshrc ~/.zshrc
-  cp -f "$CONFIG_DIR"/astro.zsh-theme -o ~/.oh-my-zsh/custom/themes/astro.zsh-theme
+  cp -f "$CONFIG_DIR"/astro.zsh-theme ~/.oh-my-zsh/custom/themes/astro.zsh-theme
   # wget https://raw.githubusercontent.com/iplaces/astro-zsh-theme/master/astro.zsh-theme -o ~/.oh-my-zsh/custom/themes/astro.zsh-theme
 
   # Configure emacs
   rm -fr ~/.emacs.d
   git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+  cp -f "$CONFIG_DIR"/.spacemacs ~
   # curl -sLf https://spacevim.org/install.sh | bash
   # curl -sLf https://spacevim.org/install.sh | bash -s -- --uninstall
 
