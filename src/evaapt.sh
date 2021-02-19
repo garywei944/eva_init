@@ -3,18 +3,10 @@
 # @Author  : garywei944 (garywei944@gmail.com)
 # @Link    : https://github.com/garywei944
 
-
-
 # Driver
 driver() {
   sudo ubuntu-drivers autoinstall
 }
-
-
-
-
-
-
 # Albert
 albert() {
   # Ubuntu 18.04

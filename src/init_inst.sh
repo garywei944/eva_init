@@ -1,5 +1,16 @@
 #!/usr/bin/env bash
 
+common() {
+  basic
+  gtest
+  awscliv2
+
+  config_sudo
+  config_key
+  config_git
+  config_terminal
+}
+
 ubuntu() {
   common
 
@@ -28,4 +39,22 @@ ubuntu() {
 
   config_sublime
   config_vagrant
+}
+
+server() {
+  common
+
+  config_shadowsocks
+}
+
+wsl() {
+  sudo apt remove -y --purge openssh-server
+  common
+
+  config_server
+}
+
+vagrant() {
+  common
+  config_server
 }
