@@ -1,26 +1,26 @@
 #!/usr/bin/env bash
 
 config_vim() {
-  if [[ ${EVA+x} ]]; then
-    mkdir -p ~/.vim/pack/vendor/start ~/.vim/.backup ~/.vim/.swp ~/.vim/.undo
+  [[ ${EVA+x} ]] || exit
 
-    #tender
-    git clone https://github.com/jacoborus/tender.vim ~/.vim/pack/vendor/start/tendor
+  mkdir -p ~/.vim/pack/vendor/start ~/.vim/.backup ~/.vim/.swp ~/.vim/.undo
 
-    # nerdtree
-    git clone https://github.com/scrooloose/nerdtree ~/.vim/pack/vendor/start/nerdtree
+  #tender
+  git clone https://github.com/jacoborus/tender.vim ~/.vim/pack/vendor/start/tendor
 
-    # mru
-    git clone https://github.com/lvht/mru ~/.vim/pack/vendor/start/mru
+  # nerdtree
+  git clone https://github.com/scrooloose/nerdtree ~/.vim/pack/vendor/start/nerdtree
 
-    # fzf
-    sudo apt -y install fzf
-    git clone https://github.com/lvht/fzf ~/.vim/pack/vendor/start/fzf
+  # mru
+  git clone https://github.com/lvht/mru ~/.vim/pack/vendor/start/mru
 
-    # ag
-    git clone https://github.com/mileszs/ack.vim ~/.vim/pack/vendor/start/ack
-    sudo apt -y install ack-grep silversearcher-ag
+  # fzf
+  sudo apt -y install fzf
+  git clone https://github.com/lvht/fzf ~/.vim/pack/vendor/start/fzf
 
-    cp -f "$CONFIG_DIR"/.vimrc ~
-  fi
+  # ag
+  git clone https://github.com/mileszs/ack.vim ~/.vim/pack/vendor/start/ack
+  sudo apt -y install ack-grep silversearcher-ag
+
+  cp -f "$CONFIG_DIR"/.vimrc ~
 }

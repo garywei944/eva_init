@@ -1,68 +1,68 @@
 #!/usr/bin/env bash
 
 common() {
-  basic
-  gtest
-  awscli
+  (basic)
+  (gtest)
+  (awscli)
 
-  config_sudo
+  (config_sudo)
 
   # The following functions are implemented s.t. if $EVA is not set, it would not do anything
-  config_keys
-  config_git
-  config_terminal
-  config_vim
-  config_conda
+  (config_keys)
+  (config_git)
+  (config_terminal)
+  (config_vim)
+  (config_conda)
 }
 
 ariseus() {
-  common
-  apt_cuda
+  (common)
+  (apt_cuda)
 
-  config_sys
-  config_time
+  (config_sys)
+  (config_time)
 
-  apt_desktop
-  sublime
+  (apt_desktop)
+  (sublime)
 
-  config_sublime
-  config_vagrant
+  (config_sublime)
+  (config_vagrant)
 
   local app
   while read -r app; do
-    $app
+    ($app)
   done <"$EVA_ROOT"/optional_apps.txt
 }
 
 desktop() {
-  common
+  (common)
 
-  apt_desktop
-  sublime
+  (apt_desktop)
+  (sublime)
 
-  config_sublime
+  (config_sublime)
 
   local app
   while read -r app; do
-    $app
+    ($app)
   done <"$EVA_ROOT"/optional_apps.txt
 }
 
 server() {
-  common
+  (common)
 
-  config_shadowsocks_server
+  (config_shadowsocks_server)
 }
 
 wsl() {
   sudo apt remove -y --purge openssh-server
-  common
+  (common)
 
-  config_wsl
-  config_server
+  (config_wsl)
+  (config_server)
 }
 
 vagrant() {
-  common
-  config_server
+  (common)
+  (config_server)
 }

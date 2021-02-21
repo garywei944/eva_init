@@ -26,5 +26,5 @@ config_keys() { ./keys/init_keys.sh; }
 
 # Run arguments
 for cmd in "$@"; do
-  $cmd
+  ($cmd)
 done

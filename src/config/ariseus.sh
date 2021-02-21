@@ -2,14 +2,14 @@
 
 # Configure System
 config_sys() {
-  if [[ ${EVA+x} ]]; then
-    sudo vim /etc/default/grub
-    sudo update-grub
+  [[ ${EVA+x} ]] || exit
 
-    # Trick here to mkdir in child process s.t. $PWD doesn't change
-    eval "$(cd /mnt && sudo mkdir windows adam kiana misaki asuka)"
-    cat <"$CONFIG_DIR"/fstab | sudo tee -a /etc/fstab
-  fi
+  sudo vim /etc/default/grub
+  sudo update-grub
+
+  # Trick here to mkdir in child process s.t. $PWD doesn't change
+  (cd /mnt && sudo mkdir windows adam kiana misaki asuka)
+  cat <"$CONFIG_DIR"/fstab | sudo tee -a /etc/fstab
 }
 
 # Set system time
