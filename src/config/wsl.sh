@@ -5,13 +5,14 @@ config_wsl() {
   SSHD_FILE=/etc/ssh/sshd_config
   SUDOERS_FILE=/etc/sudoers
 
-  sudo cp $SSHD_FILE ${SSHD_FILE}.$(date '+%Y-%m-%d_%H-%M-%S').back
+  sudo cp $SSHD_FILE ${SSHD_FILE}."$(date '+%Y-%m-%d_%H-%M-%S')".back
   sudo sed -i '/^Port/ d' $SSHD_FILE
   sudo sed -i '/^PasswordAuthentication/ d' $SSHD_FILE
   echo "Port ${SSHD_PORT}" | sudo tee -a $SSHD_FILE
   echo "PasswordAuthentication yes" | sudo tee -a $SSHD_FILE
   sudo service ssh --full-restart
 
+  sed -i '/^sudo service ssh --full-restart/ d' ~/.bashrc
   sed -i '/^sudo service ssh --full-restart/ d' ~/.zshrc
   echo "%sudo ALL=(ALL) NOPASSWD: /usr/sbin/service ssh --full-restart" | sudo tee -a $SUDOERS_FILE
   cat <<'EOF' >>~/.zshrc

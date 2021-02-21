@@ -1,7 +1,0 @@
-name: eva_wsl
-channels:
-  - defaults
-  - conda-forge
-dependencies:
-  - anaconda=2020.11
-  - imbalanced-learn
