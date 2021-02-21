@@ -4,16 +4,17 @@
 
 # Make sure that $PWD is the directory of the script
 EVA_ROOT=$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null && pwd)
-SRC_DIR="$EVA_ROOT"/src
+export EVA_ROOT
+export SRC_DIR="$EVA_ROOT"/src
 # shellcheck disable=SC2034
-CONFIG_DIR="$EVA_ROOT"/config
+export CONFIG_DIR="$EVA_ROOT"/config
 
 # CD into the directory of init.sh
 cd "$EVA_ROOT" || exit
 
 # If the $USER is aris, set $EVA automatically
 # shellcheck disable=SC2034
-[[ $USER = "aris" ]] && EVA=
+[[ $USER = "aris" ]] && export EVA="ariseus"
 
 # Make alias
 config_keys() { ./keys/init_keys.sh; }

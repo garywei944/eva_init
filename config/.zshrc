@@ -99,3 +99,4 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export PATH=$PATH:~/.eva/bin
+export EVA="ariseus"
