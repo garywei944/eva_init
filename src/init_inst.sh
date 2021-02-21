@@ -11,6 +11,7 @@ common() {
   (config_keys)
   (config_git)
   (config_terminal)
+  (config_emacs)
   (config_vim)
   (config_conda)
 }

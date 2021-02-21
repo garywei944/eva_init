@@ -20,29 +20,8 @@ config_terminal() {
   cp -f "$CONFIG_DIR"/astro.zsh-theme ~/.oh-my-zsh/custom/themes/astro.zsh-theme
   # wget https://raw.githubusercontent.com/iplaces/astro-zsh-theme/master/astro.zsh-theme -o ~/.oh-my-zsh/custom/themes/astro.zsh-theme
 
-  # Configure emacs
-  rm -fr ~/.emacs.d
-  git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-  cp -f "$CONFIG_DIR"/.spacemacs ~
-  # curl -sLf https://spacevim.org/install.sh | bash
-  # curl -sLf https://spacevim.org/install.sh | bash -s -- --uninstall
-
   # Clone .eva repo to ~/.eva
   git clone git@github.com:garywei944/eva_bin.git ~/.eva
-}
-
-config_git() {
-  [[ ${EVA+x} ]] || exit
-
-  cp -f "$CONFIG_DIR"/.gitconfig ~
-
-  # Add github.com to known_hosts
-  if [ ! -d ~/.ssh ]; then
-    mkdir -p ~/.ssh
-    chmod 700 ~/.ssh
-  fi
-  ssh-keyscan -H github.com >>~/.ssh/known_hosts
-  chmod 644 ~/.ssh/known_hosts
 }
 
 # Configure conda environment
@@ -54,7 +33,5 @@ config_conda() {
 
 # Configure Vagrant
 config_vagrant() {
-  [[ ${EVA+x} ]] || exit
-
   cp -f "$CONFIG_DIR"/Vagrantfile ~
 }
