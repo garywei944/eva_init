@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Exit if EVA is not defined
+[[ ${EVA+x} ]] || exit
+
 DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null && pwd)
 cd "$DIR" || exit
 

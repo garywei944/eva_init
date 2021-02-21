@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+[[ ${EVA+x} ]] || exit
+
 # Configure sublime text 3
 cd ~/.config || exit
 mkdir -p sublime-text-3/Installed\ Packages
