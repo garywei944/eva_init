@@ -6,6 +6,8 @@ common() {
   awscli
 
   config_sudo
+
+  # The following functions are implemented s.t. if $EVA is not set, it would not do anything
   config_keys
   config_git
   config_terminal
