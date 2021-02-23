@@ -10,6 +10,8 @@ config_sys() {
   # Trick here to mkdir in child process s.t. $PWD doesn't change
   (cd /mnt && sudo mkdir windows adam kiana misaki asuka)
   cat <"$CONFIG_DIR"/fstab | sudo tee -a /etc/fstab
+
+  sudo nfw enable
 }
 
 # Set system time

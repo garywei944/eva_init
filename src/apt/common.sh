@@ -16,7 +16,7 @@ basic() {
   sudo apt update
 
   # System Essentials
-  sudo apt -y install git zsh screen net-tools openssh-server wget curl zip rar unrar dos2unix htop bashtop traceroute shadowsocks-libev lazygit rsync jq shc
+  sudo apt -y install git zsh screen net-tools openssh-server wget curl zip rar unrar dos2unix htop bashtop traceroute shadowsocks-libev lazygit rsync jq shc nfw
 
   # Development Runtimes
   sudo apt -y install emacs vim git git-flow build-essential default-jdk python python3 python3-pip virtualenv python3-venv cmake clang gdb valgrind ctags checkinstall
@@ -34,7 +34,7 @@ basic() {
 }
 
 apt_desktop() {
-  sudo apt -y install ubuntu-restricted-extras scrot flameshot gparted kazam vlc gpicview
+  sudo apt -y install ubuntu-restricted-extras scrot flameshot gparted kazam vlc gpicview evolution evolution-ews clamav clamtk
 }
 
 apt_cuda() {
