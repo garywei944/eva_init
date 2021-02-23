@@ -2,7 +2,10 @@
 
 # Discord
 discord() {
-  sudo snap install discord
+  cd /tmp || exit
+  wget -O discord.deb "https://discordapp.com/api/download?platform=linux&format=deb"
+  sudo apt install -y ./discord.deb
+  rm -fr discord.deb
 }
 
 # Metasploit
@@ -12,7 +15,11 @@ metasploit() {
 
 # Netease Music
 netease_music() {
-  sudo snap install netease-music --beta --devmode
+  # sudo snap install netease-music --beta --devmode
+  cd /tmp || exit
+  wget -O netease-music.deb "https://d1.music.126.net/dmusic/netease-cloud-music_1.2.1_amd64_ubuntu_20190428.deb"
+  sudo apt install -y ./netease-music.deb
+  rm -fr netease-music.deb
 }
 
 # PyMol
