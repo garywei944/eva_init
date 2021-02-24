@@ -27,7 +27,9 @@ basic() {
   sudo npm install -g n
   sudo n stable
 
-  sudo snap install --classic heroku
+  # Heroku
+  # sudo snap install --classic heroku
+  curl https://cli-assets.heroku.com/install.sh | sh
 
   # Deprecated
   # sudo apt -y install python-pip
