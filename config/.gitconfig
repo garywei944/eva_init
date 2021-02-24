@@ -2,7 +2,7 @@
 	name = garywei944
 	email = 33930674+garywei944@users.noreply.github.com
 [core]
-	editor = emacs -nw
+	editor = emacsclient -nw
 	autocrlf = input
 [init]
 	defaultBranch = main
