@@ -21,7 +21,7 @@ config_terminal() {
   sed -i '/^ZSH_THEME=/c ZSH_THEME="astro"' ~/.zshrc
   sed -i '/^# DISABLE_UPDATE_PROMPT=/s/# //' ~/.zshrc
   sed -i '/^# export UPDATE_ZSH_DAYS=/s/# //' ~/.zshrc
-  sed -i '/^# ENABLE_CORRECTION=/s/# //' ~/.zshrc
+#  sed -i '/^# ENABLE_CORRECTION=/s/# //' ~/.zshrc
   sed -i '/^plugins=/c plugins=(sudo ubuntu extract git git-flow emacs sublime sublime-merge z zsh-autosuggestions zsh-syntax-highlighting)' ~/.zshrc
   sed -i '/^# export MANPATH=/s/# //' ~/.zshrc
   sed -i '/^# export LANG=/s/# //' ~/.zshrc

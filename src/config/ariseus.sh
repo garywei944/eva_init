@@ -4,12 +4,17 @@
 config_sys() {
   [[ ${EVA+x} ]] || exit
 
+  # Update grub
   sudo vim /etc/default/grub
   sudo update-grub
 
-  # Trick here to mkdir in child process s.t. $PWD doesn't change
+  # Configure /mnt to auto mount windows partitions
   (cd /mnt && sudo mkdir windows adam kiana misaki asuka)
   cat <"$CONFIG_DIR"/fstab | sudo tee -a /etc/fstab
+
+  # Update /etc/systemd/system.conf s.t. to power off faster
+  sudo sed -i '/DefaultTimeoutStopSec=/c DefaultTimeoutStopSec=1s' /etc/systemd/system.conf
+  sudo systemctl daemon-reload
 
   sudo nfw enable
 }

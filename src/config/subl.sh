@@ -18,6 +18,7 @@ config_sublime() {
   cp -f "$CONFIG_DIR"/config.log ~/.codeintel/config.log
 
   # Install Sublime Text Dependencies
+  sudo apt -y install inkscape
   pip install --upgrade --pre CodeIntel || pip3 install --upgrade --pre CodeIntel
   sudo npm install -g jshint csslint xg-htmlhint
   sudo npm install -g browser-sync

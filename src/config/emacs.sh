@@ -5,6 +5,11 @@ config_emacs() {
 
   # Configure emacs
   git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+  git clone git@github.com:garywei944/.spacemacs.d.git ~/.spacemacs.d
+
+  if [ -d /usr/share/applications ]; then
+    sudo cp -f "$CONFIG_DIR"/spacemacs.desktop /usr/share/applications
+  fi
 
   cd /tmp || exit
 

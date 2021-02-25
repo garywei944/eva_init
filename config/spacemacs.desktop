@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Name=Spacemacs
+GenericName=Text Editor
+Comment=Emacs advanced Kit focused on Evil
+MimeType=text/english;text/plain;text/x-makefile;text/x-c++hdr;text/x-c++src;text/x-chdr;text/x-csrc;text/x-java;text/x-moc;text/x-pascal;text/x-tcl;text/x-tex;application/x-shellscript;text/x-c;text/x-c++;
+TryExec=/home/aris/.oh-my-zsh/plugins/emacs/emacsclient.sh
+Exec=/home/aris/.oh-my-zsh/plugins/emacs/emacsclient.sh --no-wait %F
+Icon=/home/aris/.eva/assets/spacemacs.png
+Type=Application
+Terminal=false
+Categories=Utility;Development;TextEditor;
+StartupWMClass=Emacs
+Keywords=Text;Editor;
