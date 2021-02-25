@@ -9,6 +9,7 @@
 * BashSupport Pro
 * Batch Scripts Support
 * CMD Support
+* Code Screenshot
 * CodeGlance
 * CSV Plugin
 * Extra Actions
@@ -49,6 +50,7 @@
 * Big Data Tools
 * CognitiveComplexity
 * Database Navigator
+* EduTools
 * Ideolog
 * JavaFX Runtime for Plugins
 * Kubernetes

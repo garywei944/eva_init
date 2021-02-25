@@ -8,6 +8,11 @@ discord() {
   rm -fr discord.deb
 }
 
+# TexLive and Tex Maker
+latex() {
+  sudo apt -y install texlive-full texmaker
+}
+
 # Metasploit
 metasploit() {
   curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb >msfinstall && chmod 755 msfinstall && ./msfinstall
@@ -49,14 +54,14 @@ tweaks() {
   sudo apt -y install gnome-tweaks
 }
 
-# Wine
-wine() {
-  sudo apt -y install wine winetricks
-}
-
 # Timeshift
 timeshift() {
   sudo add-apt-repository -y ppa:teejee2008/ppa
   sudo apt update
   sudo apt -y install timeshift
+}
+
+# Wine
+wine() {
+  sudo apt -y install wine winetricks
 }

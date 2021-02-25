@@ -22,7 +22,9 @@ config_emacs() {
   # git clone git@github.com:practicalli/clojure-deps-edn.git ~/.clojure/
 
   # Packages
-  sudo apt install rlwrap silversearcher-ag ripgrep fd-find locate aspell fonts-firacode
+  sudo apt install rlwrap silversearcher-ag ripgrep fd-find locate aspell fonts-firacode ttf-ancient-fonts graphviz
+  sudo npm install -g js-beautify prettier vscode-css-languageserver-bin vscode-html-languageserver-bin
+
 
   # Source Code Pro Font
   wget -O Source_Code_Pro.zip https://fonts.google.com/download?family=Source%20Code%20Pro

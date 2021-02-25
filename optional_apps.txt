@@ -8,3 +8,4 @@ tweaks
 wine
 steam
 timeshift
+latex
