@@ -10,3 +10,4 @@
 8. fcitx + sougou input
 9. Zoom
 10. TeamViewer
+11. MatLab
