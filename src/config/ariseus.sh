@@ -48,3 +48,9 @@ export PATH=/usr/local/cuda-11.0/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda-11.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 EOF
 }
+
+gnome_themes() {
+  mkdir -p ~/.icons ~/.themes
+  unzip "$EVA_ROOT"/assets/icons.zip -d ~/.icons
+  unzip "$EVA_ROOT"/assets/themes.zip -d ~/.themes
+}

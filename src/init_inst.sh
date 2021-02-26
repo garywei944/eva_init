@@ -28,6 +28,7 @@ ariseus() {
 
   (config_sublime)
   (config_vagrant)
+  (gnome_themes)
 
   local app
   while read -r app; do
