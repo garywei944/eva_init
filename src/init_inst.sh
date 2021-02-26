@@ -43,6 +43,7 @@ desktop() {
   (sublime)
 
   (config_sublime)
+  (gnome_themes)
 
   local app
   while read -r app; do

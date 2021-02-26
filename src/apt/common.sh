@@ -31,6 +31,9 @@ basic() {
   # sudo snap install --classic heroku
   curl https://cli-assets.heroku.com/install.sh | sh
 
+  # Just for fun
+  sudo apt -y install screenfetch lolcat figlet fortune cowsay
+
   # Deprecated
   # sudo apt -y install python-pip
 }

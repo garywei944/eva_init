@@ -3,6 +3,7 @@
 config_vim() {
   [[ ${EVA+x} ]] || exit
 
+  cd ~ || exit
   mkdir -p ~/.vim/pack/vendor/start ~/.vim/.backup ~/.vim/.swp ~/.vim/.undo
 
   #tender
@@ -22,7 +23,8 @@ config_vim() {
   git clone https://github.com/mileszs/ack.vim ~/.vim/pack/vendor/start/ack
   sudo apt -y install ack-grep silversearcher-ag
 
-  cp -f "$CONFIG_DIR"/.vimrc ~
+  #  cp -f "$CONFIG_DIR"/.vimrc ~
+  ln -s .config/.vimrc .
 
   # curl -sLf https://spacevim.org/install.sh | bash
   # curl -sLf https://spacevim.org/install.sh | bash -s -- --uninstall

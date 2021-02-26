@@ -50,6 +50,8 @@ EOF
 }
 
 gnome_themes() {
+  sudo apt -y install gnome-tweaks gnome-shell-extensions gnome-tweak-tool chrome-gnome-shell
+
   mkdir -p ~/.icons ~/.themes
   unzip "$EVA_ROOT"/assets/icons.zip -d ~/.icons
   unzip "$EVA_ROOT"/assets/themes.zip -d ~/.themes
