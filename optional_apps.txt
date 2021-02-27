@@ -9,3 +9,5 @@ wine
 steam
 timeshift
 latex
+awesome
+qtile

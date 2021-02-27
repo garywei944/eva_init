@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 
 qtile() {
-  conda create -y -n qtile python
-  conda activate qtile
-
   sudo apt-get install libxcb-render0-dev
   pip install xcffib
   pip install --no-cache-dir cairocffi

@@ -2,6 +2,7 @@
 
 common() {
   (basic)
+  (anaconda)
   (gtest)
   (awscli)
 
