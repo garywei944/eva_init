@@ -47,6 +47,9 @@
     <keyboard-shortcut first-keystroke="ctrl b" />
   </action>
   <action id="ServiceView.ShowServices" />
+  <action id="SplitHorizontally">
+    <keyboard-shortcut first-keystroke="shift ctrl alt 2" />
+  </action>
   <action id="SplitSelectionIntoLines">
     <keyboard-shortcut first-keystroke="shift ctrl l" />
   </action>
