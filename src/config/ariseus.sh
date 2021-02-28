@@ -43,9 +43,9 @@ EOF
 
 # Configure cuda 11
 config_cuda_11() {
-  cat <<"EOF" >>~/.bashrc
-export PATH=/usr/local/cuda-11.0/bin${PATH:+:${PATH}}
-export LD_LIBRARY_PATH=/usr/local/cuda-11.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+  cat <<"EOF" >>~/.zshrc
+export PATH=/usr/local/cuda-11.2/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-11.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 EOF
 }
 

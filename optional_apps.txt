@@ -10,3 +10,4 @@ pymol
 steam
 timeshift
 wine
+wireshark
