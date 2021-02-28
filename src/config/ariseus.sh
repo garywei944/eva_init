@@ -16,7 +16,7 @@ config_sys() {
   sudo sed -i '/DefaultTimeoutStopSec=/c DefaultTimeoutStopSec=1s' /etc/systemd/system.conf
   sudo systemctl daemon-reload
 
-  sudo nfw enable
+  sudo ufw enable
 }
 
 # Set system time

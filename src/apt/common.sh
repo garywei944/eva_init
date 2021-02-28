@@ -22,7 +22,7 @@ basic() {
   sudo apt install -y screen tmux htop bashtop locate silversearcher-ag ripgrep fd-find rsync numlockx traceroute shadowsocks-libev jq pulseaudio ranger
 
   # Development Runtimes
-  sudo apt install -y build-essential default-jdk python python3 python3-pip virtualenv python3-venv cmake clang ghostscript 
+  sudo apt install -y build-essential default-jdk python python3 python3-pip virtualenv python3-venv cmake clang ghostscript
 
   # Development tools
   sudo apt install -y emacs vim git-flow gdb valgrind ctags checkinstall rlwrap aspell autoconf libtool colordiff shc ttf-ancient-fonts fonts-powerline fonts-firacode dos2unix lazygit
@@ -49,11 +49,11 @@ apt_desktop() {
   sudo apt install -y scrot flameshot gparted gpicview  clamav clamtk graphviz terminator compton pavucontrol
 
   # Media Player
-  sudo apt install -y ubuntu-restricted-extras vlc kazam 
+  sudo apt install -y ubuntu-restricted-extras vlc kazam
 
 
   # Productivity
-  sudo apt install -y evoluttion evolution-ews
+  sudo apt install -y evolution evolution-ews
 }
 
 apt_cuda() {
