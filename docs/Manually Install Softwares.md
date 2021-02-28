@@ -1,6 +1,5 @@
 # Manually Install Software
 
-1. NVIDIA driver
 2. CUDA + Cudnn
 3. vmware
 4. Virtual Box

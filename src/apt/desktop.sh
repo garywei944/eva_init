@@ -8,6 +8,11 @@ discord() {
   rm -fr discord.deb
 }
 
+# fcitx
+fcitx() {
+  sudo apt install -y fcitx-bin fcitx-table fcitx-anthy fcitx-mozc
+}
+
 # TexLive and Tex Maker
 latex() {
   sudo apt install -y texlive-full texmaker
@@ -47,11 +52,6 @@ sublime() {
   echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
   sudo apt update
   sudo apt install -y sublime-text sublime-merge
-}
-
-# GNome Tweaks
-tweaks() {
-  sudo apt install -y gnome-tweaks
 }
 
 # Timeshift
