@@ -13,12 +13,8 @@ config_sublime() {
   rm -fr Packages
   git clone git@github.com:garywei944/aris_st3.git Packages
 
-  # Configure codeintel
-  mkdir -p ~/.codeintel
-  cp -f "$CONFIG_DIR"/config.log ~/.codeintel/config.log
-
   # Install Sublime Text Dependencies
-  sudo apt -y install inkscape
+  sudo apt install -y inkscape
   pip install --upgrade --pre CodeIntel || pip3 install --upgrade --pre CodeIntel
   sudo npm install -g jshint csslint xg-htmlhint
   sudo npm install -g browser-sync

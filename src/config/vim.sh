@@ -16,12 +16,12 @@ config_vim() {
   git clone https://github.com/lvht/mru ~/.vim/pack/vendor/start/mru
 
   # fzf
-  sudo apt -y install fzf
+  sudo apt install -y fzf
   git clone https://github.com/lvht/fzf ~/.vim/pack/vendor/start/fzf
 
   # ag
   git clone https://github.com/mileszs/ack.vim ~/.vim/pack/vendor/start/ack
-  sudo apt -y install ack-grep silversearcher-ag
+  sudo apt install -y ack-grep silversearcher-ag
 
   #  cp -f "$CONFIG_DIR"/.vimrc ~
   rm -f ~/.vimrc

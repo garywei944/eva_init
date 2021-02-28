@@ -22,7 +22,7 @@ config_sys() {
 # Set system time
 config_time() {
   sudo timedatectl set-local-rtc 1
-  sudo apt -y install ntpdate
+  sudo apt install -y ntpdate
   sudo ntpdate time.windows.com
   sudo hwclock --localtime --systohc
 }
@@ -50,7 +50,7 @@ EOF
 }
 
 gnome_themes() {
-  sudo apt -y install gnome-tweaks gnome-shell-extensions gnome-tweak-tool chrome-gnome-shell
+  sudo apt install -y gnome-tweaks gnome-shell-extensions gnome-tweak-tool chrome-gnome-shell
 
   mkdir -p ~/.icons ~/.themes
   unzip "$EVA_ROOT"/assets/icons.zip -d ~/.icons

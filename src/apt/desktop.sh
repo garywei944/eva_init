@@ -10,7 +10,7 @@ discord() {
 
 # TexLive and Tex Maker
 latex() {
-  sudo apt -y install texlive-full texmaker
+  sudo apt install -y texlive-full texmaker
 }
 
 # Metasploit
@@ -29,12 +29,12 @@ netease_music() {
 
 # PyMol
 pymol() {
-  sudo apt -y install pymol
+  sudo apt install -y pymol
 }
 
 # Steam
 steam() {
-  sudo apt -y install steam
+  sudo apt install -y steam
 }
 
 # Sublime Text 3 & Sublime Merge
@@ -43,25 +43,25 @@ sublime() {
   # sudo snap install sublime-merge --classic
 
   wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
-  sudo apt -y install apt-transport-https
+  sudo apt install -y apt-transport-https
   echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
   sudo apt update
-  sudo apt -y install sublime-text sublime-merge
+  sudo apt install -y sublime-text sublime-merge
 }
 
 # GNome Tweaks
 tweaks() {
-  sudo apt -y install gnome-tweaks
+  sudo apt install -y gnome-tweaks
 }
 
 # Timeshift
 timeshift() {
   sudo add-apt-repository -y ppa:teejee2008/ppa
   sudo apt update
-  sudo apt -y install timeshift
+  sudo apt install -y timeshift
 }
 
 # Wine
 wine() {
-  sudo apt -y install wine winetricks
+  sudo apt install -y wine winetricks
 }
