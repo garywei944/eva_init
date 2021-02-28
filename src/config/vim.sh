@@ -24,7 +24,8 @@ config_vim() {
   sudo apt -y install ack-grep silversearcher-ag
 
   #  cp -f "$CONFIG_DIR"/.vimrc ~
-  ln -s .config/.vimrc .
+  rm -f ~/.vimrc
+  ln -s .config/.vimrc ~
 
   # curl -sLf https://spacevim.org/install.sh | bash
   # curl -sLf https://spacevim.org/install.sh | bash -s -- --uninstall

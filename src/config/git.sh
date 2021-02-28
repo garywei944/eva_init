@@ -6,7 +6,7 @@ config_git() {
   #  cp -f "$CONFIG_DIR"/.gitconfig ~
   cd ~ || exit
   rm -f .gitconfig
-  ln -s .config/.gitconfig .
+  ln -s .config/.gitconfig ~
 
   # Add github.com to known_hosts
   mkdir -p ~/.ssh

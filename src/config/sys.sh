@@ -6,6 +6,16 @@ config_sudo() {
 $USER	ALL=(ALL)	NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 }
 
+clone_config() {
+  cd ~/.config || exit
+  rm -fr .git
+  git init
+  echo '*' > .gitignore
+  git remote add origin git@github.com:garywei944/.config.git
+  git fetch
+  git checkout main
+}
+
 # Configuration Terminal
 config_terminal() {
   [[ ${EVA+x} ]] || exit
