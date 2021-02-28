@@ -17,12 +17,17 @@ common() {
   (config_conda)
 }
 
-ariseus() {
-  (common)
+ariseus_driver() {
+  (update)
   (apt_cuda)
+  (driver)
 
   (config_sys)
   (config_time)
+}
+
+ariseus() {
+  (common)
 
   (apt_desktop)
   (sublime)

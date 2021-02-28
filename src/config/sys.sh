@@ -7,6 +7,8 @@ $USER	ALL=(ALL)	NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 }
 
 clone_config() {
+  [[ ${EVA+x} ]] || exit
+  
   cd ~/.config || exit
   rm -fr .git
   git init
@@ -29,6 +31,7 @@ config_terminal() {
   cd /tmp
   git clone git@github.com:iplaces/astro-zsh-theme.git
   mv astro-zsh-theme/astro.zsh-theme ~/.oh-my-zsh/custom/themes
+  rm -fr astro-zsh-theme
 
   cp ~/.zshrc ~/.zshrc.bak
   echo ". ~/.config/.zshrc" >~/.zshrc

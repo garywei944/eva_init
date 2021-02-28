@@ -16,10 +16,16 @@ basic() {
   sudo apt update
 
   # System Essentials
-  sudo apt install -y git zsh screen net-tools openssh-server wget curl zip rar unrar dos2unix htop bashtop traceroute shadowsocks-libev lazygit rsync jq shc nfw fonts-firacode gpg ttf-ancient-fonts fonts-powerline numlockx tmux pulseaudio colordiff
+  sudo apt install -y git zsh net-tools openssh-server wget curl zip rar unrar nfw gpg
+
+  # System management
+  sudo apt install -y screen tmux htop bashtop locate silversearcher-ag ripgrep fd-find rsync numlockx traceroute shadowsocks-libev jq pulseaudio ranger
 
   # Development Runtimes
-  sudo apt install -y emacs vim git-flow build-essential default-jdk python python3 python3-pip virtualenv python3-venv cmake clang gdb valgrind ctags checkinstall rlwrap silversearcher-ag ripgrep fd-find locate aspell ghostscript autoconf libtool
+  sudo apt install -y build-essential default-jdk python python3 python3-pip virtualenv python3-venv cmake clang ghostscript 
+
+  # Development tools
+  sudo apt install -y emacs vim git-flow gdb valgrind ctags checkinstall rlwrap aspell autoconf libtool colordiff shc ttf-ancient-fonts fonts-powerline fonts-firacode dos2unix lazygit
 
   # Install nodejs and update to latest
   sudo apt install -y nodejs npm
@@ -32,7 +38,7 @@ basic() {
   curl https://cli-assets.heroku.com/install.sh | sh
 
   # Just for fun
-  sudo apt install -y screenfetch lolcat figlet fortune cowsay
+  sudo apt install -y screenfetch neofetch lolcat figlet fortune cowsay
 
   # Deprecated
   # sudo apt install -y python-pip
@@ -40,13 +46,14 @@ basic() {
 
 apt_desktop() {
   # System management
-  sudo apt install -y ubuntu-restricted-extras scrot flameshot gparted kazam vlc gpicview evoluttion evolution-ews clamav clamtk graphviz terminator compton pavucontrol
+  sudo apt install -y scrot flameshot gparted gpicview  clamav clamtk graphviz terminator compton pavucontrol
 
   # Media Player
+  sudo apt install -y ubuntu-restricted-extras vlc kazam 
 
 
   # Productivity
-
+  sudo apt install -y evoluttion evolution-ews
 }
 
 apt_cuda() {
