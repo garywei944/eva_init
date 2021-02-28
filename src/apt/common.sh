@@ -16,7 +16,7 @@ basic() {
   sudo apt update
 
   # System Essentials
-  sudo apt install -y git zsh net-tools openssh-server wget curl zip rar unrar nfw gpg
+  sudo apt install -y git zsh net-tools openssh-server wget curl zip rar unrar ufw gpg
 
   # System management
   sudo apt install -y screen tmux htop bashtop locate silversearcher-ag ripgrep fd-find rsync numlockx traceroute shadowsocks-libev jq pulseaudio ranger
