@@ -29,7 +29,7 @@ config_time() {
 
 # Driver
 driver() {
-  sudo ubuntu-drivers autoinstall
+  sudo ubuntu-drivers install
 }
 
 # Disable Nouveau
