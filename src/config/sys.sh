@@ -8,14 +8,14 @@ $USER	ALL=(ALL)	NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 
 clone_config() {
   [[ ${EVA+x} ]] || exit
-  
+
   cd ~/.config || exit
   rm -fr .git
   git init
   echo '*' > .gitignore
   git remote add origin git@github.com:garywei944/.config.git
-  git fetch
-  git checkout main
+  yes | git fetch
+  git checkout -b main
 }
 
 # Configuration Terminal

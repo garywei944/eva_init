@@ -65,3 +65,8 @@ timeshift() {
 wine() {
   sudo apt install -y wine winetricks
 }
+
+# Wireshark
+wireshark() {
+  sudo apt install -y wireshark
+}
