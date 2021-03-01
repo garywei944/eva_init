@@ -16,7 +16,7 @@ basic() {
   sudo apt update
 
   # System Essentials
-  sudo apt install -y git zsh net-tools openssh-server wget curl zip rar unrar ufw gpg
+  sudo apt install -y git zsh net-tools openssh-server wget curl zip rar unrar ufw gpg cargo
 
   # System management
   sudo apt install -y screen tmux bashtop htop fd-find locate ripgrep silversearcher-ag rsync numlockx traceroute shadowsocks-libev jq pulseaudio ranger
@@ -28,6 +28,9 @@ basic() {
 
   # Development tools
   sudo apt install -y emacs vim git-flow gdb valgrind ctags checkinstall rlwrap aspell autoconf libtool colordiff shc ttf-ancient-fonts fonts-powerline fonts-firacode dos2unix lazygit
+
+  # as-tree
+  cargo install -f --git https://github.com/jez/as-tree
 
   # Install nodejs and update to latest
   sudo apt install -y nodejs npm
