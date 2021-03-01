@@ -9,5 +9,7 @@ netease_music
 pymol
 steam
 timeshift
+vb_vagrant
 wine
 wireshark
+clean_desktop

@@ -61,6 +61,11 @@ timeshift() {
   sudo apt install -y timeshift
 }
 
+# Virtual Box
+vb_vagrant() {
+  sudo apt install -y virtualbox vagrant
+}
+
 # Wine
 wine() {
   sudo apt install -y wine winetricks
