@@ -19,7 +19,7 @@ basic() {
   sudo apt install -y git zsh net-tools openssh-server wget curl zip rar unrar ufw gpg cargo
 
   # System management
-  sudo apt install -y screen tmux bashtop htop fd-find locate ripgrep silversearcher-ag rsync numlockx traceroute shadowsocks-libev jq pulseaudio ranger
+  sudo apt install -y screen tmux bashtop htop fd-find locate ripgrep silversearcher-ag rsync numlockx traceroute shadowsocks-libev jq pulseaudio ranger dconf
 
   sudo ln -s /usr/bin/fdfind /usr/bin/fd
 
@@ -51,7 +51,7 @@ basic() {
 
 apt_desktop() {
   # System management
-  sudo apt install -y scrot flameshot gparted gpicview  clamav clamtk graphviz terminator compton pavucontrol
+  sudo apt install -y scrot flameshot gparted gpicview  clamav clamtk graphviz terminator compton pavucontrol dconf-editor
 
   # Media Player
   sudo apt install -y ubuntu-restricted-extras vlc kazam
