@@ -24,7 +24,7 @@ basic() {
   sudo ln -s /usr/bin/fdfind /usr/bin/fd
 
   # Development Runtimes
-  sudo apt install -y build-essential default-jdk python python3 python3-pip virtualenv python3-venv cmake clang ghostscript
+  sudo apt install -y build-essential default-jdk python python3 python3-pip virtualenv python3-venv cmake clang ghostscript cabal-install
 
   # Development tools
   sudo apt install -y emacs vim git-flow gdb valgrind ctags checkinstall rlwrap aspell autoconf libtool colordiff shc ttf-ancient-fonts fonts-powerline fonts-firacode dos2unix lazygit
