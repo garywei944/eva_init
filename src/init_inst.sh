@@ -5,6 +5,7 @@ common() {
   (config_sudo)
   (clone_config)
 
+  (docker)
   (anaconda)
   (gtest)
   (awscli)
