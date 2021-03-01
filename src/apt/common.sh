@@ -19,7 +19,9 @@ basic() {
   sudo apt install -y git zsh net-tools openssh-server wget curl zip rar unrar ufw gpg
 
   # System management
-  sudo apt install -y screen tmux htop bashtop locate silversearcher-ag ripgrep fd-find rsync numlockx traceroute shadowsocks-libev jq pulseaudio ranger
+  sudo apt install -y screen tmux bashtop htop fd-find locate ripgrep silversearcher-ag rsync numlockx traceroute shadowsocks-libev jq pulseaudio ranger
+
+  sudo ln -s /usr/bin/fdfind /usr/bin/fd
 
   # Development Runtimes
   sudo apt install -y build-essential default-jdk python python3 python3-pip virtualenv python3-venv cmake clang ghostscript
