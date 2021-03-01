@@ -86,7 +86,6 @@ All `<command>` are defined by the scripts within `src` folder and are declared 
 It takes me about 7 min to finish `./init.sh desktop` on a pure Ubuntu 20.04 VMware virtual machine using half(16) cores of AMD Ryzen 3950X. Without the script, normally it would take hours to days to fully set up an Ubuntu instance(install apps + set up configurations).
 
 ## TODO
-* Install `wechat`
 * Automatically set up `config_sys`
 * Automatically set up `config_shadowsocks_server`
 * Make a solution to update private keys and tokens regularly (for security reasons).

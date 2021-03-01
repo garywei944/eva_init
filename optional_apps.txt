@@ -9,6 +9,7 @@ pymol
 steam
 timeshift
 vb_vagrant
+wechat
 wine
 wireshark
 clean_desktop
