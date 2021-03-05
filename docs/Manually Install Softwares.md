@@ -3,7 +3,7 @@
 * CUDA + Cudnn
 * vmware
 * Jetbrains IDE set
-* fcitx + sougou input
+* sougou input
 * Zoom
 * TeamViewer
 * MatLab

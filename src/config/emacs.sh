@@ -4,6 +4,7 @@ config_emacs() {
   [[ ${EVA+x} ]] || exit
 
   # Configure emacs
+  rm -fr ~/.emacs.d ~/.spacemacs.d ~/.spacemacs ~/.spacemacs.env
   git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
   git clone git@github.com:garywei944/.spacemacs.d.git ~/.spacemacs.d
 

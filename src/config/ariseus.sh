@@ -9,7 +9,8 @@ config_sys() {
   sudo update-grub
 
   # Configure /mnt to auto mount windows partitions
-  (cd /mnt && sudo mkdir windows adam kiana misaki asuka)
+  cd /mnt || exit
+  sudo mkdir windows adam kiana misaki asuka
   cat <"$CONFIG_DIR"/fstab | sudo tee -a /etc/fstab
 
   # Update /etc/systemd/system.conf s.t. to power off faster

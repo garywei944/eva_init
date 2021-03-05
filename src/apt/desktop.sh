@@ -18,11 +18,6 @@ latex() {
   sudo apt install -y texlive-full texmaker
 }
 
-# Metasploit
-metasploit() {
-  curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb >msfinstall && chmod 755 msfinstall && ./msfinstall
-}
-
 # Netease Music
 netease_music() {
   # sudo snap install netease-music --beta --devmode

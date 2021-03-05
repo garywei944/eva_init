@@ -3,6 +3,9 @@
 common() {
   (basic)
   (config_sudo)
+
+  (config_keys)
+  (config_git)
   (clone_config)
 
   (docker)
@@ -10,18 +13,15 @@ common() {
   (gtest)
   (awscli)
 
-  (config_keys)
-  (config_git)
   (config_terminal)
   (config_emacs)
   (config_vim)
-  (config_conda)
 }
 
 ariseus_driver() {
   (update)
   (apt_cuda)
-  (driver)
+  # (driver)
 
   (config_sys)
   (config_time)
@@ -34,7 +34,6 @@ ariseus() {
   (sublime)
 
   (config_sublime)
-  (config_vagrant)
   (gnome_themes)
 
   local app

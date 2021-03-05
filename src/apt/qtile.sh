@@ -2,12 +2,12 @@
 
 qtile() {
   sudo apt install -y libxcb-render0-dev libpangocairo-1.0-0
-  pip install xcffib
-  pip install --no-cache-dir cairocffi
-  pip install dbus-next
+  sudo pip3 install xcffib
+  sudo pip3 install --no-cache-dir cairocffi
+  sudo pip3 install dbus-next
 
   cd /tmp || exit
   git clone git://github.com/qtile/qtile.git
   cd qtile
-  pip install .
+  sudo pip3 install .
 }

@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-git branch -m master main
-git fetch origin --prune
-git branch -u origin/main main
