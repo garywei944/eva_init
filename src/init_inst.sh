@@ -18,28 +18,22 @@ common() {
   (config_vim)
 }
 
-ariseus_driver() {
+apps() {
+  local app
+  while read -r app; do
+    ($app)
+  done <"$EVA_ROOT"/optional_apps.txt
+}
+
+ariseus() {
   (update)
   (apt_cuda)
   # (driver)
 
   (config_sys)
   (config_time)
-}
 
-ariseus() {
-  (common)
-
-  (apt_desktop)
-  (sublime)
-
-  (config_sublime)
-  (gnome_themes)
-
-  local app
-  while read -r app; do
-    ($app)
-  done <"$EVA_ROOT"/optional_apps.txt
+  (desktop)
 }
 
 desktop() {
@@ -51,10 +45,7 @@ desktop() {
   (config_sublime)
   (gnome_themes)
 
-  local app
-  while read -r app; do
-    ($app)
-  done <"$EVA_ROOT"/optional_apps.txt
+  (apps)
 }
 
 server() {
