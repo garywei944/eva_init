@@ -12,12 +12,10 @@ clone_config() {
   cd ~ || exit
   rm -fr .git
   git init
-  echo '*' > .gitignore
   git remote add origin git@github.com:garywei944/eva_ubuntu.git
   git config core.excludesFile .eva.gitignore
   git fetch
-  git checkout -f -b main
-  rm -f .gitignore
+  git reset --hard origin/main
 }
 
 # Configuration Terminal

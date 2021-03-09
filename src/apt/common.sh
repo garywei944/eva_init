@@ -19,7 +19,7 @@ basic() {
   sudo apt install -y git zsh net-tools openssh-server wget curl zip rar unrar ufw gpg cargo
 
   # System management
-  sudo apt install -y screen tmux bashtop htop fd-find locate ripgrep silversearcher-ag rsync numlockx traceroute shadowsocks-libev jq pulseaudio ranger dconf
+  sudo apt install -y screen tmux bashtop htop fd-find locate ripgrep silversearcher-ag rsync numlockx traceroute shadowsocks-libev jq pulseaudio ranger
 
   sudo ln -s /usr/bin/fdfind /usr/bin/fd
 
