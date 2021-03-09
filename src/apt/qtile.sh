@@ -6,12 +6,14 @@ qtile() {
   sudo pip3 install --no-cache-dir cairocffi
   sudo pip3 install dbus-next
 
-  cd /tmp || exit
-  git clone git://github.com/qtile/qtile.git
-  cd qtile
-  sudo pip3 install .
-  cd ..
-  rm -fr qtile
+  # cd /tmp || exit
+  # git clone git://github.com/qtile/qtile.git
+  # cd qtile
+  # sudo pip3 install .
+  # cd ..
+  # rm -fr qtile
+
+  sudo pip3 install qtile
 
   sudo cp -f "$CONFIG_DIR"/qtile.desktop /usr/share/xsessions/qtile.desktop
 }
