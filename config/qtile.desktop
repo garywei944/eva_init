@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Qtile
+Comment=Qtile Session
+Exec=python3 /home/aris/.local/bin/qtile
+Type=Application
+Keywords=wm;tiling

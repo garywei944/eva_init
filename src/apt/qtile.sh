@@ -12,4 +12,6 @@ qtile() {
   sudo pip3 install .
   cd ..
   rm -fr qtile
+
+  sudo cp -f "$CONFIG_DIR"/qtile.desktop /usr/share/xsessions/qtile.desktop
 }
