@@ -10,4 +10,6 @@ qtile() {
   git clone git://github.com/qtile/qtile.git
   cd qtile
   sudo pip3 install .
+  cd ..
+  rm -fr qtile
 }
