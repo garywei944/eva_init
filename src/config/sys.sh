@@ -16,6 +16,7 @@ clone_config() {
   git config core.excludesFile .eva.gitignore
   git fetch
   git reset --hard origin/main
+  git branch --set-upstream-to=origin/main main
 }
 
 # Configuration Terminal

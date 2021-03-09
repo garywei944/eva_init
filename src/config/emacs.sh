@@ -23,7 +23,7 @@ config_emacs() {
   # git clone git@github.com:practicalli/clojure-deps-edn.git ~/.clojure/
 
   # Packages
-  sudo apt install rlwrap silversearcher-ag ripgrep fd-find locate aspell fonts-firacode ttf-ancient-fonts graphviz
+  sudo apt install -y rlwrap silversearcher-ag ripgrep fd-find locate aspell fonts-firacode ttf-ancient-fonts graphviz
   sudo npm install -g js-beautify prettier vscode-css-languageserver-bin vscode-html-languageserver-bin
 
 
