@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 qtile() {
+  sudo apt install -y python3-pytest xserver-xephyr x11-apps
+
   sudo apt install -y libxcb-render0-dev libpangocairo-1.0-0
   sudo pip3 install xcffib
   sudo pip3 install --no-cache-dir cairocffi
