@@ -16,6 +16,7 @@ clone_config() {
   git config core.excludesFile .eva.gitignore
   git fetch
   git reset --hard origin/main
+  git branch -m master main
   git branch --set-upstream-to=origin/main main
 }
 
@@ -29,6 +30,8 @@ config_terminal() {
   wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
   git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+
+  echo '. .config/zsh' > ~/.zshrc
 
   cd /tmp
   git clone git@github.com:iplaces/astro-zsh-theme.git
