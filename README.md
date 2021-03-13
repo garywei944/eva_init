@@ -7,6 +7,9 @@ By default, the scripts won't set up my personal configurations and private keys
 
 I keep my configuration files under `./config`, custom commands under `./bin`, and some documentation under `./docs`.
 
+## Some notes..
+I found that it's super annoying to maintain the repo if I maintain whatever change I made on my PC. So perhaps I won't maintain `desktop` and `ariseus` in the future, they will be deprecated soon.
+
 ## Usage
 ```bash
 [EVA=] ./init.sh <command>
