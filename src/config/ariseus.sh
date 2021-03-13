@@ -54,6 +54,9 @@ gnome_themes() {
   sudo apt install -y gnome-tweaks gnome-shell-extensions gnome-tweak-tool chrome-gnome-shell gnome-screensaver
 
   mkdir -p ~/.icons ~/.themes
-  unzip "$EVA_ROOT"/assets/icons.zip -d ~/.icons
-  unzip "$EVA_ROOT"/assets/themes.zip -d ~/.themes
+  cd tmp || exit
+  git clone -b assets --depth 1 git@github.com:garywei944/eva_ubuntu.git
+  cd eva_ubuntu || exit
+  unzip icons.zip -d ~/.icons
+  unzip themes.zip -d ~/.themes
 }
