@@ -28,15 +28,10 @@ config_terminal() {
   chsh -s /bin/zsh
   # sudo vim /etc/passwd
   wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
-  git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+  git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/zsh_custom/plugins/zsh-autosuggestions
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh_custom/plugins/zsh-syntax-highlighting
 
   echo '. .config/zsh' > ~/.zshrc
-
-  cd /tmp
-  git clone git@github.com:iplaces/astro-zsh-theme.git
-  mv astro-zsh-theme/astro.zsh-theme ~/.oh-my-zsh/custom/themes
-  rm -fr astro-zsh-theme
 
   # Clone .eva repo to ~/.eva
   git clone git@github.com:garywei944/eva_init.git ~/.eva
