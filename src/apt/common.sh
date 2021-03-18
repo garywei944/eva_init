@@ -51,7 +51,7 @@ basic() {
 
 apt_desktop() {
   # System management
-  sudo apt install -y scrot flameshot gparted gpicview  clamav clamtk graphviz terminator compton pavucontrol dconf-editor xtrace
+  sudo apt install -y scrot flameshot gparted gpicview  clamav clamtk graphviz terminator compton pavucontrol dconf-editor xtrace light xbacklight
 
   # Media Player
   sudo apt install -y ubuntu-restricted-extras vlc kazam

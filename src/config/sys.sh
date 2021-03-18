@@ -31,8 +31,8 @@ config_terminal() {
   git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/zsh_custom/plugins/zsh-autosuggestions
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh_custom/plugins/zsh-syntax-highlighting
 
-  echo '. .config/zsh' > ~/.zshrc
+  echo '. .config/rc.zsh' > ~/.zshrc
 
   # Clone .eva repo to ~/.eva
-  git clone git@github.com:garywei944/eva_init.git ~/.eva
+  # git clone git@github.com:garywei944/eva_init.git ~/.eva
 }

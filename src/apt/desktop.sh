@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# Gnome themes
+gnome_themes() {
+  sudo apt install -y gnome-tweaks gnome-shell-extensions gnome-tweak-tool chrome-gnome-shell gnome-screensaver
+}
+
 # Discord
 discord() {
   cd /tmp || exit
