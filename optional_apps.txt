@@ -5,6 +5,7 @@ discord
 fcitx
 latex
 netease_music
+postgres
 pymol
 steam
 timeshift
