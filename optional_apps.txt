@@ -1,5 +1,6 @@
 albert
 awesome
+blender
 chrome
 discord
 fcitx

@@ -75,3 +75,8 @@ wine() {
 wireshark() {
   sudo apt install -y wireshark
 }
+
+# Blender
+blender() {
+  sudo apt install -y blender
+}
