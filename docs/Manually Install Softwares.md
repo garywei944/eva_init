@@ -8,3 +8,4 @@
 * TeamViewer
 * MatLab
 * VS Code
+* R Studio

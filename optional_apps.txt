@@ -3,11 +3,13 @@ awesome
 blender
 chrome
 discord
+ebcli
 fcitx
 latex
 netease_music
 postgres
 pymol
+r
 steam
 timeshift
 vb_vagrant
