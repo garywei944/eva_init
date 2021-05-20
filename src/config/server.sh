@@ -6,8 +6,6 @@ config_server() {
   cd ~/.ssh || exit
   cat id_rsa.pub >> authorized_keys
   chmod 600 authorized_keys
-
-  ~/
 }
 
 # Configure shadowsocks
