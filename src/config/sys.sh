@@ -15,7 +15,16 @@ clone_config() {
   git remote add origin git@github.com:garywei944/eva_ubuntu.git
   git config core.excludesFile .eva.gitignore
   git fetch
-  git reset --hard origin/main
+
+  # The following command is too slow if the home directory is massive
+  local BRANCH_
+  if [[ -n $SSH_CONNECTION ]]; then
+    BRANCH_='server'
+  else
+    BRANCH_='main'
+  fi
+  git reset --hard origin/${BRANCH_}
+  git reset --soft origin/main
   git branch -m master main
   git branch --set-upstream-to=origin/main main
 }
