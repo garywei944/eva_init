@@ -43,7 +43,7 @@ basic() {
   curl https://cli-assets.heroku.com/install.sh | sh
 
   # Just for fun
-  sudo apt install -y screenfetch neofetch lolcat figlet fortune cowsay
+  sudo apt install -y screenfetch neofetch lolcat figlet fortune cowsay linuxlogo
 
   # Deprecated
   # sudo apt install -y python-pip
