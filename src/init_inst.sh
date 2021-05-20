@@ -26,6 +26,8 @@ apps() {
 }
 
 ariseus() {
+  export EVA=
+
   (update)
   (apt_cuda)
   # (driver)
@@ -52,6 +54,22 @@ server() {
   (common)
 
   (config_shadowsocks_server)
+}
+
+# Stand Alone Server - no sudo permission
+sa_server() {
+  export NOSUDO=
+
+  (config_keys)
+  (config_git)
+  (clone_config)
+
+  # (anaconda)
+
+  (config_terminal)
+  (config_emacs)
+  (config_vim)
+  (config_server)
 }
 
 wsl() {

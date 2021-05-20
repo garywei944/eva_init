@@ -16,11 +16,15 @@ config_vim() {
   git clone https://github.com/lvht/mru ~/.vim/pack/vendor/start/mru
 
   # fzf
-  sudo apt install -y fzf
   git clone https://github.com/lvht/fzf ~/.vim/pack/vendor/start/fzf
 
   # ag
   git clone https://github.com/mileszs/ack.vim ~/.vim/pack/vendor/start/ack
+
+  # exit if no sudo permission
+  [[ ${NOSUDO+x} ]] && exit
+
+  sudo apt install -y fzf
   sudo apt install -y ack-grep silversearcher-ag
 
   # curl -sLf https://spacevim.org/install.sh | bash
