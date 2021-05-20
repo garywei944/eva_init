@@ -22,7 +22,7 @@ config_sys() {
 
 # Set system time
 config_time() {
-  sudo timedatectl set-local-rtc 1
+  # sudo timedatectl set-local-rtc 1
   sudo apt install -y ntpdate
   sudo ntpdate time.windows.com
   sudo hwclock --localtime --systohc

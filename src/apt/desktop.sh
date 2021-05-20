@@ -18,6 +18,11 @@ fcitx() {
   sudo apt install -y fcitx-bin fcitx-table fcitx-anthy fcitx-mozc
 }
 
+# FileZilla
+filezilla() {
+  sudo apt install -y filezilla
+}
+
 # TexLive and Tex Maker
 latex() {
   sudo apt install -y texlive-full texmaker

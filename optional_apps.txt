@@ -4,6 +4,7 @@ blender
 chrome
 discord
 ebcli
+filezilla
 fcitx
 latex
 netease_music
@@ -16,4 +17,3 @@ vb_vagrant
 wechat
 wine
 wireshark
-clean_desktop
