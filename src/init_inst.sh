@@ -73,7 +73,7 @@ sa_server() {
 }
 
 wsl() {
-  sudo apt remove -y --purge openssh-server
+  sudo apt purge -y openssh-server
   (common)
 
   (config_wsl)
