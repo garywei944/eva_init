@@ -1,17 +1,94 @@
-# EVA BIN
+# One-click initialize Ubuntu instance
 
-## About the Repository
-I have a gaming laptop, a macbook, and some ShadowsocksR server with Linux, so I work on Mac OS, Linux, and Windows in the meantime. I wrote some scripts in bash and cmd while setting up these OS'. Most of them are proposed to set up a development environment or perform some custom commands. Since it's somehow annoying to copy the scripts by a flash disk or via scp, I make this repository. 
+## Overview
+`init.sh` is used to initialize many kinds of Ubuntu 20 instances including PC(Pure Ubuntu), WSL, vagrant, or server instances(AWS EC3, Vultr.com server, etc). It installs necessary dependencies and applications.
 
-I'll write README for each sub directory to describe what the scripts for. 
+By default, the scripts won't set up my personal configurations and private keys unless the environment variable `EVA` is set.
 
-## About EVA
-The original propose is to make an equivalent for windows to mac's Alfred. While I found a pretty nice launcher called [Wox](https://github.com/Wox-launcher/Wox), *EVA* is only used to name these custom commands. 
+I keep my configuration files under `./config`, custom commands under `./bin`, and some documentation under `./docs`.
 
-## 关于这个库
-我有一台游戏本和一个mac，同时还维护着几个linux的SSR服务器，所以基本要同时使用Mac OS, Linux, Windows三个操作系统。安装和配置这些系统的时候写过一些bash和cmd的脚本，大多是为了自动化地搭建开发环境或者自定义的一些命令。每次都用U盘或者SCP传脚本很麻烦，所以就建了这个库。
+## Some notes..
+I found that it's super annoying to maintain the repo if I maintain whatever change I made on my PC. So perhaps I won't maintain `desktop` and `ariseus` in the future, they will be deprecated soon.
 
-我会给每个子目录写一个README来标记每个脚本大概是做什么的。
+## Usage
+```bash
+[EVA=] ./init.sh <command>
+```
+For instance, if I create a new server from any cloud service provider, all I need to do is to run
+```bash
+./init.sh server
+```
+and enter the password if needed, then I'm all set.
 
-## 关于EVA
-最开始的设想是在windows里写一个类似于mac上的Alfred的launcher，后来找到了还不错的[Wox](https://github.com/Wox-launcher/Wox)，于是*EVA*就只被用来命名这些脚本了。
+If I want to install `docker` on the machine, I'll do
+```bash
+./init.sh docker
+```
+If I want to set up the `/etc/sudoers` file so that I won't need to enter the passwd to run `sudo`, I'll do
+```bash
+./init.sh config_sudo
+```
+
+However, if I want to set default shell to `zsh` and import my configuration for `oh-my-zsh` and `spacemacs`, I'll do
+```bash
+EVA= ./init.sh config_terminal
+```
+All `<command>` are defined by the scripts within `src` folder and are declared within the type of bash functions.
+
+### Type of instance
+* `ariseus` - my personal computer, fix dual-system bugs and set up disk configurations
+* `desktop` - virtual machine or PC with pure Ubuntu 20 installation
+* `server` - AWS EC2 instance or other ubuntu server. Install `basic` and Shadowsocks R
+* `wsl` - reinstall `openssh-server` and set up ssh listening port on `port 2233`.
+* `vagrant` - similar to how `server` is set up, but no Shadowsocks R set up. Set up ssh listening port on `port 2233`.
+
+
+### App name to be installed
+* `basic` - install all development environments and necessary terminal utils, including `zsh`, `build-essential`, `python`, etc.
+* `apt_desktop` - install useful software for desktop including `gparted`, `vlc`, `kazam`, etc.
+* `chrome` - install the latest stable version using `.deb` package.
+* `docker` - follows the official document to install docker
+* `sublime` - install sublime text 3 and sublime merge via `apt`
+* ... - Other available apps are included in [Optional apps](#optional-apps)
+
+### Configurations
+*Note that only `config_sudo` runs without the environment variable `$EVA` set since they all import my personal configurations*
+* `config_sudo` - make `sudo` not need to enter password
+* `config_git` - add git configuration and add `github.com` to `authorized_keys`
+* `config_terminal` - configure `zsh`, `emacs`, and clone this repo to `~/.eva`
+* `config_vim` - add vim configuration and download dependencies
+* `config_server` - add `id_rsa.pub` to `authorized_keys`
+* `config_shadowsocks_server` - update configuration for `shadowsocks-libev`
+* `config_sublime` - download my configuration from [aris_st3](https://github.com/garywei944/aris_st3) and install dependencies.
+* `config_conda` - add conda configuration
+* `config_vagrant` - add `~/Vagrantfile` and set it to Ubuntu 20.04
+* `config_sys` - update `/etc/default/grub` and `/etc/fstab`, specified for my PC
+* `config_time` - fix win10 and ubuntu dual-system time conflict
+* `config_wsl` - set up wsl according to [WSL-CLion](https://www.jetbrains.com/help/clion/how-to-use-wsl-development-environment-in-product.html)
+
+## Optional commands
+* `driver` - equivalent to run `sudo ubuntu-drivers autoinstall`
+* `disable_nouveau`
+* `config_cuda_11` - update `PATH` in `~/.zshrc`
+
+## Optional apps
+`init.sh` will read and install all apps within `optional_apps.txt`. They work the same way with `<command>`.
+* `chrome`
+* `docker`
+* `albert`
+* `netease_music`
+* `discord`
+* `pymol`
+* `tweaks`
+* `wine`
+* `steam`
+* `timeshift`
+* `metasploit` - *(Deprecated since source list unavailable)*
+
+## Performance
+It takes me about 7 min to finish `./init.sh desktop` on a pure Ubuntu 20.04 VMware virtual machine using half(16) cores of AMD Ryzen 3950X. Without the script, normally it would take hours to days to fully set up an Ubuntu instance(install apps + set up configurations).
+
+## TODO
+* Automatically set up `config_sys`
+* Automatically set up `config_shadowsocks_server`
+* Make a solution to update private keys and tokens regularly (for security reasons).
