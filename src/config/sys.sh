@@ -12,7 +12,7 @@ clone_config() {
   cd ~ || exit
   rm -fr .git
   git init
-  git remote add origin git@github.com:garywei944/eva_ubuntu.git
+  git remote add origin git@github.com:garywei944/eva_arch.git
   git config core.excludesFile .eva.gitignore
   git fetch
   git reset --hard origin/main
