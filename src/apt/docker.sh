@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Docker
-docker() {
+install_docker() {
   sudo apt remove -y docker docker.io containerd runc
   sudo apt install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common
   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
