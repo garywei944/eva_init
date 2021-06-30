@@ -6,6 +6,6 @@ awscli() {
   unzip awscliv2.zip
 
   mkdir -p ~/.local/bin
-  ./aws/install -b ~/.locl/bin/aws
+  ./aws/install -i ~/.local/share/aws-cli -b ~/.local/bin/aws
   rm -fr aws awscliv2.zip
 }
