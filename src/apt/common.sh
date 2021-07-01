@@ -9,6 +9,9 @@ update() {
 basic() {
   update
 
+  # Install necessary ppa tools
+  sudo apt install -y software-properties-common
+
   # Add necessary repository
   sudo add-apt-repository -y ppa:bashtop-monitor/bashtop
   sudo add-apt-repository -y ppa:lazygit-team/release
