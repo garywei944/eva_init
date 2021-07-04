@@ -7,6 +7,8 @@ update() {
 
 # Basic Runtime Environments
 basic() {
+  [[ -n ${NOSUDO+x} ]] && exit
+
   update
 
   # Install necessary ppa tools
@@ -50,4 +52,33 @@ basic() {
 
   # Deprecated
   # sudo apt install -y python-pip
+}
+
+_neofetch() {
+  cd /tmp || exit
+  git clone --depth 1 https://github.com/dylanaraps/neofetch
+  cd neofetch
+  PREFIX=~/.local make install
+}
+
+_figlet() {
+  cd /tmp || exit
+  git clone --depth 1 https://github.com/cmatsuoka/figlet.git
+  cd figlet
+  sed -i 's/\/usr\/local/$(HOME)\/.local/g' Makefile
+  make install
+}
+
+
+# Stand alone common
+sa_common() {
+  [[ -z ${NOSUDO+x} ]] && exit
+
+  cargo install fd-find
+  cargo install ripgrep
+  cargo install -f --git https://github.com/jez/as-tree
+
+  (_neofetch)
+  (_figlet)
+  cargo install lolcat
 }

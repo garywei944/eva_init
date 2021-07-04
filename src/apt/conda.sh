@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-anaconda() {
+_anaconda() {
   local link
   link=$(wget -O - https://www.anaconda.com/distribution/ 2>/dev/null | sed -ne 's@.*\(https:\/\/repo\.anaconda\.com\/archive\/Anaconda3-.*-Linux-x86_64\.sh\)\">64-Bit (x86) Installer.*@\1@p')
 
@@ -12,7 +12,7 @@ anaconda() {
   rm -f anaconda_script.sh
 }
 
-mambaforge() {
+_mambaforge() {
   cd /tmp || exit
   wget "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-Linux-x86_64.sh"
   bash Mambaforge-Linux-x86_64.sh -b

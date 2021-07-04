@@ -1,4 +1,4 @@
-shadowsocks() {
+_shadowsocks() {
 	[[ ${PORT+x} ]] || PORT=31705
 	[[ ${PASSWORD+x} ]] || read -sp 'Password for shadowsocks: ' PASSWORD
 

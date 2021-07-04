@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-gtest() {
+_gtest() {
   sudo apt install -y libgtest-dev
   cd /usr/src/googletest || exit
   sudo mkdir build

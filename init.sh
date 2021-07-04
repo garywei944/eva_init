@@ -19,7 +19,7 @@ config_keys() { ./keys/init_keys.sh; }
 # Load functions
 . ./src/init_config.sh
 . ./src/init_apt.sh
-. ./src/init_inst.sh
+. ./instance.sh
 
 # Run arguments
 for cmd in "$@"; do

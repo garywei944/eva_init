@@ -8,10 +8,11 @@ common() {
   (config_git)
   (clone_config)
 
-  (docker)
-  (mambaforge)
-  (gtest)
-  (awscli)
+  (_docker)
+  (_cargo)
+  (_mambaforge)
+  (_gtest)
+  (_awscli)
 
   (config_terminal)
   (config_emacs)
@@ -21,7 +22,7 @@ common() {
 server() {
   (common)
 
-  (shadowsocks)
+  (_shadowsocks)
 }
 
 # Stand Alone Server - no sudo permission
@@ -32,8 +33,8 @@ sa_server() {
   (config_git)
   (clone_config)
 
-  (mambaforge)
-  (awscli)
+  (_mambaforge)
+  (_awscli)
 
   (config_terminal)
   (config_emacs)
