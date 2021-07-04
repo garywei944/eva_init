@@ -11,3 +11,16 @@ _docker() {
   sudo apt install -y docker-ce docker-ce-cli containerd.io
   sudo gpasswd -a "${USER}" docker
 }
+
+
+# Docker compose
+_docker_compose() {
+  if [[ -z ${NOSUDO+x} ]]; then
+    sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    sudo chmod +x /usr/local/bin/docker-compose
+    sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+  else
+    curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o ~/.local/bin/docker-compose
+    chmod +x ~/.local/bin/docker-compose
+  fi
+}

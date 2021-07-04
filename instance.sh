@@ -9,6 +9,7 @@ common() {
   (clone_config)
 
   (_docker)
+  (_docker_compose)
   (_cargo)
   (_mambaforge)
   (_gtest)
@@ -33,6 +34,7 @@ sa_server() {
   (config_git)
   (clone_config)
 
+  (sa_common)
   (_mambaforge)
   (_awscli)
 
