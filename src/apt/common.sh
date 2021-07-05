@@ -73,6 +73,8 @@ _figlet() {
 # Stand alone common
 sa_common() {
   [[ -z ${NOSUDO+x} ]] && exit
+  
+  curl https://sh.rustup.rs -sSf | sh
 
   cargo install fd-find
   cargo install ripgrep
