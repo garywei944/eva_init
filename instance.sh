@@ -10,7 +10,6 @@ common() {
 
   (_docker)
   (_docker_compose)
-  (_cargo)
   (_mambaforge)
   (_gtest)
   (_awscli)
