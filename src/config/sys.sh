@@ -26,7 +26,7 @@ config_terminal() {
 
 	# Configure zsh
 	chsh -s /bin/zsh || echo '
-if [[ -n $SSH_TTY && $SHLVL == 1 ]]; then
+if [[ -n $SSH_TTY && $SHLVL == 1 && -n $(command -v zsh) ]]; then
 	zsh
 	exit
 fi
