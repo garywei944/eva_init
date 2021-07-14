@@ -1,0 +1,54 @@
+#!/bin/zsh
+
+apps=(
+	gnupg
+	googletest
+	wget
+	fd
+	ripgrep
+	jq
+	tree
+	ranger
+	java
+	python
+	virtualenv
+	cmake
+	ghostscript
+	cabal-install
+	lua
+	git-flow-avh
+	gdb
+	ctags
+	rlwrap
+	aspell
+	autoconf
+	libtool
+	colordiff
+	shc
+	dos2unix
+	lazygit
+	as-tree
+	node
+	screenfetch
+	neofetch
+	lolcat
+	figlet
+	fortune
+	cowsay
+	awscli
+	r
+)
+
+cask_apps=(
+	iterm2
+	mactex
+	rar
+	emacs
+	mambaforge
+	rstudio
+	pycharm
+	webstorm
+	docker
+	skim
+	blender
+)
