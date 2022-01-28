@@ -54,6 +54,13 @@ basic() {
   # sudo apt install -y python-pip
 }
 
+_pwndbg() {
+  cd /tmp || exit
+  git clone --depth 1 https://github.com/pwndbg/pwndbg
+  cd pwndbg || exit
+  ./setup.sh
+}
+
 _neofetch() {
   cd /tmp || exit
   git clone --depth 1 https://github.com/dylanaraps/neofetch
