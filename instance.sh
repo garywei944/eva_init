@@ -8,7 +8,6 @@ common() {
   (config_git)
   (clone_config)
 
-  (_pwndbg)
   (_docker)
   (_docker_compose)
   (_mambaforge)
@@ -35,7 +34,6 @@ sa_server() {
   (clone_config)
 
   (sa_common)
-  (_pwndbg)  # TODO: might not work
   (_mambaforge)
   (_awscli)
 

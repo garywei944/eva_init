@@ -34,6 +34,9 @@ basic() {
   # Development tools
   sudo apt install -y emacs vim git-flow gdb valgrind ctags checkinstall rlwrap aspell autoconf libtool colordiff shc ttf-ancient-fonts fonts-powerline fonts-firacode dos2unix lazygit
 
+  # pwndbg
+  (_pwndbg)
+
   # as-tree
   cargo install -f --git https://github.com/jez/as-tree
 
@@ -87,6 +90,7 @@ sa_common() {
   cargo install ripgrep
   cargo install -f --git https://github.com/jez/as-tree
 
+  (_pwndbg)  # TODO: might not work
   (_neofetch)
   (_figlet)
   cargo install lolcat
