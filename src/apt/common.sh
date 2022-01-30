@@ -58,7 +58,7 @@ basic() {
 }
 
 _pwndbg() {
-  cd /tmp || exit
+  cd ~/.local/share || exit
   git clone --depth 1 https://github.com/pwndbg/pwndbg
   cd pwndbg || exit
   ./setup.sh
@@ -90,7 +90,7 @@ sa_common() {
   cargo install ripgrep
   cargo install -f --git https://github.com/jez/as-tree
 
-  (_pwndbg)  # TODO: might not work
+  (_pwndbg)
   (_neofetch)
   (_figlet)
   cargo install lolcat
