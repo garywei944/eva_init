@@ -39,3 +39,13 @@ fi
 
 	echo '. ~/.config/rc.zsh' > ~/.zshrc
 }
+
+config_ulimit() {
+	cat << "EOF" | sudo tee -a /etc/security/limits.conf
+DefaultLimitNOFILE=65535
+root	soft	nofile	65535
+root	hard	nofile	65535
+root	soft	noproc	65535
+root	hard	noproc	65535
+EOF
+}

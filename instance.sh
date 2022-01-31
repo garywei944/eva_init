@@ -3,6 +3,7 @@
 common() {
   (basic)
   (config_sudo)
+  (config_ulimit)
 
   (config_keys)
   (config_git)
