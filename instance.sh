@@ -21,8 +21,6 @@ common() {
 
 server() {
   (common)
-
-  (_shadowsocks)
 }
 
 # Stand Alone Server - no sudo permission

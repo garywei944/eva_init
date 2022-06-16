@@ -49,12 +49,11 @@ within the type of bash functions.
 
 ### Type of instance
 
-* `server` - AWS EC2 instance or other ubuntu server. Install `basic` and
-  Shadowsocks R
+* `server` - AWS EC2 instance or other ubuntu server. Install `basic`.
 * `sa_server` - Servers that I didn't have `sudo` permission.
 * `wsl` - reinstall `openssh-server` and set up ssh listening port
   on `port 2233`.
-* `vagrant` - similar to how `server` is set up, but no Shadowsocks R set up.
+* `vagrant` - similar to how `server` is set up.
   Set up ssh listening port on `port 2233`.
 
 ### App name to be installed
