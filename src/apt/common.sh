@@ -16,7 +16,9 @@ basic() {
 
   # Add necessary repository
   sudo add-apt-repository -y ppa:bashtop-monitor/bashtop
-  sudo add-apt-repository -y ppa:lazygit-team/release
+
+  # Ubuntu 22 404
+  # sudo add-apt-repository -y ppa:lazygit-team/release
 
   sudo apt update
 
@@ -24,15 +26,18 @@ basic() {
   sudo apt install -y git zsh net-tools openssh-server wget curl zip rar unrar ufw gpg cargo
 
   # System management
-  sudo apt install -y screen tmux bashtop htop fd-find locate ripgrep silversearcher-ag rsync numlockx traceroute jq pulseaudio ranger tree
+  sudo apt install -y screen tmux bashtop htop fd-find locate ripgrep silversearcher-ag rsync numlockx traceroute jq pulseaudio ranger tree ncdu
 
   sudo ln -s /usr/bin/fdfind /usr/bin/fd
 
   # Development Runtimes
-  sudo apt install -y build-essential default-jdk python python3 python3-pip virtualenv python3-venv cmake clang ghostscript cabal-install libreadline-dev lua5.3
+  # Ubuntu 22: remove python
+  sudo apt install -y build-essential default-jdk python3 python3-pip virtualenv python3-venv cmake clang ghostscript cabal-install libreadline-dev lua5.3
 
   # Development tools
-  sudo apt install -y emacs vim git-flow gdb valgrind ctags checkinstall rlwrap aspell autoconf libtool colordiff shc ttf-ancient-fonts fonts-powerline fonts-firacode dos2unix lazygit
+  # Ubuntu 22: remove lazygit, change ctags to universal-ctags
+  sudo apt install -y emacs vim git-flow gdb valgrind universal-ctags checkinstall rlwrap aspell autoconf libtool colordiff shc ttf-ancient-fonts fonts-powerline fonts-firacode dos2unix
+
 
   # pwndbg
   (_pwndbg)
