@@ -90,6 +90,8 @@ sa_common() {
 
   curl https://sh.rustup.rs -sSf | sh
 
+  export PATH="$HOME/.cargo/bin:$PATH"
+
   cargo install fd-find
   cargo install ripgrep
   cargo install -f --git https://github.com/jez/as-tree
