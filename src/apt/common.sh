@@ -32,12 +32,11 @@ basic() {
 
   # Development Runtimes
   # Ubuntu 22: remove python
-  sudo apt install -y build-essential default-jdk python3 python3-pip virtualenv python3-venv cmake clang ghostscript cabal-install libreadline-dev lua5.3
+  sudo apt install -y build-essential default-jdk python3 python3-pip virtualenv python3-venv cmake clang ghostscript cabal-install libreadline-dev lua5.3 doctest
 
   # Development tools
   # Ubuntu 22: remove lazygit, change ctags to universal-ctags
   sudo apt install -y emacs vim git-flow gdb valgrind universal-ctags checkinstall rlwrap aspell autoconf libtool colordiff shc ttf-ancient-fonts fonts-powerline fonts-firacode dos2unix
-
 
   # pwndbg
   (_pwndbg)
@@ -73,7 +72,9 @@ _neofetch() {
   cd /tmp || exit
   git clone --depth 1 https://github.com/dylanaraps/neofetch
   cd neofetch
-  PREFIX=~/.local make install
+  #  PREFIX=~/.local make install
+  sed -i 's/\/usr/$(HOME)\/.local/g' Makefile
+  make install
 }
 
 _figlet() {
@@ -90,13 +91,13 @@ sa_common() {
 
   curl https://sh.rustup.rs -sSf | sh
 
-  export PATH="$HOME/.cargo/bin:$PATH"
+  source "$HOME/.cargo/env"
 
   cargo install fd-find
   cargo install ripgrep
   cargo install -f --git https://github.com/jez/as-tree
 
-  (_pwndbg)
+  #  (_pwndbg)  # pwndbg now requires sudo
   (_neofetch)
   (_figlet)
   cargo install lolcat
