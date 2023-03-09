@@ -35,7 +35,8 @@ config_terminal() {
   chsh -s /bin/zsh || cat <<'EOF' >>~/.bashrc
 if shopt -q login_shell; then  # If this is a login shell
   if [[ $- == *i* && -n $(command -v zsh) ]]; then
-    echo we are in
+    zsh --login
+    exit
   fi
 fi
 EOF
