@@ -25,12 +25,12 @@ config_terminal() {
   [[ ${EVA+x} ]] || exit
 
   # Configure zsh
-  chsh -s /bin/zsh || echo 'EOF' >>~/.bashrc
-  if [[ -n $SSH_TTY && $SHLVL == 1 && -n $(command -v zsh) ]]; then
-    zsh
-    exit
-  fi
-  EOF
+  chsh -s /bin/zsh || cat <<'EOF' >>~/.bashrc
+if [[ -n $SSH_TTY && $SHLVL == 1 && -n $(command -v zsh) ]]; then
+  zsh --login
+  exit
+fi
+EOF
 
   # sudo vim /etc/passwd
   wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
