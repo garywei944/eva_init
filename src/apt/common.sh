@@ -44,6 +44,9 @@ basic() {
   # as-tree
   cargo install -f --git https://github.com/jez/as-tree
 
+  # SDKMAN
+  (_sdkman)
+
   # Install nodejs and update to latest
   sudo apt install -y nodejs npm
   npm cache clean -f
@@ -61,6 +64,11 @@ basic() {
   # sudo apt install -y python-pip
 }
 
+_sdkman() {
+  curl -s "https://get.sdkman.io" | bash
+  source "$HOME/.sdkman/bin/sdkman-init.sh"
+}
+
 _pwndbg() {
   cd ~/.local/share || exit
   git clone --depth 1 https://github.com/pwndbg/pwndbg
@@ -71,7 +79,7 @@ _pwndbg() {
 _neofetch() {
   cd /tmp || exit
   git clone --depth 1 https://github.com/dylanaraps/neofetch
-  cd neofetch
+  cd neofetch || exit
   #  PREFIX=~/.local make install
   sed -i 's/\/usr/$(HOME)\/.local/g' Makefile
   make install
@@ -80,7 +88,7 @@ _neofetch() {
 _figlet() {
   cd /tmp || exit
   git clone --depth 1 https://github.com/cmatsuoka/figlet.git
-  cd figlet
+  cd figlet || exit
   sed -i 's/\/usr\/local/$(HOME)\/.local/g' Makefile
   make install
 }
