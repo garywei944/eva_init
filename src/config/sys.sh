@@ -25,10 +25,18 @@ config_terminal() {
   [[ ${EVA+x} ]] || exit
 
   # Configure zsh
+  # https://unix.stackexchange.com/a/26782
+  #  chsh -s /bin/zsh || cat <<'EOF' >>~/.bashrc
+  #if [[ -n $SSH_TTY && $SHLVL == 1 && -n $(command -v zsh) ]]; then
+  #  zsh --login
+  #  exit
+  #fi
+  #EOF
   chsh -s /bin/zsh || cat <<'EOF' >>~/.bashrc
-if [[ -n $SSH_TTY && $SHLVL == 1 && -n $(command -v zsh) ]]; then
-  zsh --login
-  exit
+if shopt -q login_shell; then  # If this is a login shell
+  if [[ $- == *i* && -n $(command -v zsh) ]]; then
+    echo we are in
+  fi
 fi
 EOF
 
