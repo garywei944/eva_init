@@ -25,7 +25,8 @@ config_terminal() {
   [[ ${EVA+x} ]] || exit
 
   # Configure zsh
-  chsh -s /bin/zsh || cat <<'EOF' >>~/.bashrc
+  chsh -s /bin/zsh
+  cat <<'EOF' >>~/.bashrc
 . "$HOME/.zsh.bashrc"
 EOF
 
