@@ -66,7 +66,7 @@ basic() {
 
 _sdkman() {
   curl -s "https://get.sdkman.io" | bash
-  source "$HOME/.sdkman/bin/sdkman-init.sh"
+  . "$HOME/.sdkman/bin/sdkman-init.sh"
 }
 
 _pwndbg() {
@@ -99,7 +99,7 @@ sa_common() {
 
   curl https://sh.rustup.rs -sSf | sh
 
-  source "$HOME/.cargo/env"
+  . "$HOME/.cargo/env"
 
   cargo install fd-find
   cargo install ripgrep

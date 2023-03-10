@@ -25,14 +25,8 @@ config_terminal() {
   [[ ${EVA+x} ]] || exit
 
   # Configure zsh
-  #  chsh -s /bin/zsh || cat <<'EOF' >>~/.bashrc
-  #if [[ -n $SSH_TTY && $SHLVL == 1 && -n $(command -v zsh) ]]; then
-  #  zsh --login
-  #  exit
-  #fi
-  #EOF
   chsh -s /bin/zsh || cat <<'EOF' >>~/.bashrc
-source "$HOME/.zsh.bashrc"
+. "$HOME/.zsh.bashrc"
 EOF
 
   # sudo vim /etc/passwd
