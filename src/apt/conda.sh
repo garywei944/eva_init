@@ -12,9 +12,9 @@ _anaconda() {
   rm -f anaconda_script.sh
 }
 
-_mambaforge() {
+_miniforge() {
   cd /tmp || exit
-  wget "https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-Linux-x86_64.sh"
-  bash Mambaforge-Linux-x86_64.sh -b
-  rm -f Mambaforge-Linux-x86_64.sh
+  wget "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh"
+  bash Miniforge3-Linux-x86_64.sh -b
+  rm -f Miniforge3-Linux-x86_64.sh
 }

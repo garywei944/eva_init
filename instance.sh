@@ -10,7 +10,7 @@ common() {
 
   (_docker)
   (_docker_compose)
-  (_mambaforge)
+  (_miniforge)
   (_gtest)
   (_awscli)
 
@@ -32,11 +32,11 @@ sa_server() {
   (clone_config)
 
   (sa_common)
-  (_mambaforge)
+  (_miniforge)
   (_awscli)
 
   (config_terminal)
-  (config_emacs)
+  (config_emacs)sm
   (config_vim)
   (config_server)
 }
