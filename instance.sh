@@ -36,7 +36,7 @@ sa_server() {
   (_awscli)
 
   (config_terminal)
-  (config_emacs)sm
+  (config_emacs)
   (config_vim)
   (config_server)
 }
