@@ -44,9 +44,9 @@ packages=(
   jq ranger tree ncdu as-tree ack
   # Development Runtimes
   base-devel ruby jdk-openjdk cmake clang ghostscript ghc cabal-install readline lua
-  doctest gtest catch2 spdlog nodejs npm
+  doctest gtest catch2 spdlog nodejs npm hugo
   python python-pip python-setuptools python-keyring python-xdg python-pipenv
-  python-virtualenv python-pipx mambaforge micromamba
+  python-virtualenv python-pipx mambaforge micromamba jupyter-notebook
   # Development tools
   emacs vim gitflow-avh gdb valgrind ctags rlwrap aspell autoconf libtool colordiff
   ttf-ancient-fonts powerline-fonts ttf-fira-code dos2unix pwndbg imagemagick
