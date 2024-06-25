@@ -38,7 +38,7 @@ curl -s "https://archlinux.org/mirrorlist/?country=US&protocol=http&protocol=htt
 packages=(
   # System Essentials
   # wsl cannot install docker and docker
-  git zsh net-tools openssh wget curl zip unzip rar ufw gnupg cargo inotify-tools
+  git zsh man-db net-tools openssh wget curl zip unzip rar ufw gnupg cargo inotify-tools
   # System management
   screen tmux bashtop htop fd locate ripgrep the_silver_searcher rsync traceroute
   jq ranger tree ncdu as-tree ack
