@@ -49,7 +49,7 @@ packages=(
   python-virtualenv python-pipx jupyter-notebook mambaforge micromamba
   # Development tools
   emacs vim gitflow-avh gdb valgrind ctags rlwrap aspell autoconf libtool colordiff
-  ttf-ancient-fonts powerline-fonts ttf-fira-code dos2unix pwndbg imagemagick nerd-fonts
+  ttf-ancient-fonts powerline-fonts ttf-fira-code dos2unix imagemagick nerd-fonts
   # imagemagick
   libjxl libraw libwmf libzip ocl-icd openexr djvulibre
   # cli
