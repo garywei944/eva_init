@@ -7,7 +7,7 @@ apps=(
 	asitop tmux fd ripgrep the_silver_searcher jq tree ranger ncdu as-tree ack
 	# Development Runtimes
 	python virtualenv java cabal-install lua ghostscript cmake rust ghc readline doctest
-	catch2 spdlog googletest node hugo r
+	catch2 spdlog googletest node go hugo r
 	# Development tools
 	git-flow-avh ctags rlwrap aspell autoconf libtool colordiff dos2unix imagemagick
 	# cli
