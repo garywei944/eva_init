@@ -16,9 +16,11 @@ apps=(
 	screenfetch neofetch lolcat figlet fortune cowsay
 	# modern linux
 	bat eza lsd git-delta dust duf broot fzf mcfly choose-rust sd cheat tldr bottom glances
-	gtop hyperfine gping procs httpie curlie xh zoxide
+	gtop hyperfine gping procs httpie curlie xh zoxide doggo
 	# pwntools
 	pwntools
+	# fonts
+	font-hack-nerd-font
 
 	shc
 	lazygit
@@ -37,6 +39,7 @@ cask_apps=(
 	docker
 	skim
 	blender
+	font-fontawesome
 )
 
 brew install --cask "${cask_apps[@]}"
