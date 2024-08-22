@@ -14,29 +14,41 @@ basic() {
   # Install necessary ppa tools
   sudo apt install -y software-properties-common
 
-  # Add necessary repository
-  sudo add-apt-repository -y ppa:bashtop-monitor/bashtop
-
-  # Ubuntu 22 404
-  # sudo add-apt-repository -y ppa:lazygit-team/release
-
   sudo apt update
 
   # System Essentials
-  sudo apt install -y git zsh net-tools openssh-server wget curl zip rar unrar ufw gpg cargo
+  sudo apt install -y git zsh net-tools openssh-server wget curl zip rar unrar ufw gpg \
+    bat fzf
+
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
   # System management
-  sudo apt install -y screen tmux bashtop htop fd-find locate ripgrep silversearcher-ag rsync numlockx traceroute jq pulseaudio ranger tree ncdu
+  sudo apt install -y screen tmux bashtop htop fd-find locate ripgrep \
+    silversearcher-ag rsync numlockx traceroute jq pulseaudio ranger tree ncdu duf \
+    hyperfine gping zoxide
 
   sudo ln -s /usr/bin/fdfind /usr/bin/fd
+  sudo ln -s /usr/bin/batcat /usr/bin/bat
 
   # Development Runtimes
   # Ubuntu 22: remove python
-  sudo apt install -y build-essential default-jdk python3 python3-pip virtualenv python3-venv cmake clang ghostscript cabal-install libreadline-dev lua5.3 doctest
+  sudo apt install -y build-essential default-jdk python3 python3-pip virtualenv \
+    python3-venv cmake clang ghostscript cabal-install libreadline-dev lua5.3 doctest
 
   # Development tools
   # Ubuntu 22: remove lazygit, change ctags to universal-ctags
-  sudo apt install -y emacs vim git-flow gdb valgrind universal-ctags checkinstall rlwrap aspell autoconf libtool colordiff shc ttf-ancient-fonts fonts-powerline fonts-firacode dos2unix
+  sudo apt install -y emacs vim git-flow gdb valgrind universal-ctags checkinstall \
+    rlwrap aspell autoconf libtool colordiff shc ttf-ancient-fonts fonts-powerline \
+    fonts-firacode dos2unix
+
+  # rust
+  (_rust)
+
+  # modern unix
+  # broot
+  sudo apt install build-essential libxcb1-dev libxcb-render0-dev libxcb-shape0-dev \
+    libxcb-xfixes0-dev -y
+  cargo install --locked broot
 
   # pwndbg
   (_pwndbg)
@@ -44,8 +56,31 @@ basic() {
   # as-tree
   cargo install -f --git https://github.com/jez/as-tree
 
+  # git-delta
+  cargo install git-delta
+  # dust
+  cargo install du-dust
+  # choose
+  cargo install choose
+  # sd
+  cargo install sd
+  # bottom
+  # 24-08-21: Idk why but AWS cargo stuck at building uom
+  # cargo install bottom --locked
+  # procs
+  # cargo install procs
+
+  # lazygit
+  (_lazygit)
+
+  # mcfly
+  (_mcfly)
+
   # SDKMAN
   (_sdkman)
+
+  # cheat
+  (_cheat)
 
   # Install nodejs and update to latest
   sudo apt install -y nodejs npm
@@ -53,15 +88,39 @@ basic() {
   sudo npm install -g n
   sudo n latest
 
+  sudo npm install -g tldr
+  sudo npm install -g gtop
+
+  # glances
+  pip install --user glances
+
   # Heroku
   # sudo snap install --classic heroku
-  curl https://cli-assets.heroku.com/install.sh | sh
+  # curl https://cli-assets.heroku.com/install.sh | sh
+  # curlie
+  curl -sS https://webinstall.dev/curlie | bash
+  # doggo
+  curl -sS https://raw.githubusercontent.com/mr-karan/doggo/main/install.sh | sh
+  # xh
+  curl -sfL https://raw.githubusercontent.com/ducaale/xh/master/install.sh | sh
 
   # Just for fun
   sudo apt install -y screenfetch neofetch lolcat figlet fortune cowsay linuxlogo
 
   # Deprecated
   # sudo apt install -y python-pip
+}
+
+_rust() {
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+}
+
+_lazygit() {
+  cd /tmp || exit
+  LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+  curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+  tar xf lazygit.tar.gz lazygit
+  sudo install lazygit /usr/local/bin
 }
 
 _sdkman() {
@@ -140,7 +199,7 @@ _bashtop() {
 sa_common() {
   [[ -z ${NOSUDO+x} ]] && exit
 
-  curl https://sh.rustup.rs -sSf | sh
+  (_rust)
 
   . "$HOME/.cargo/env"
 
