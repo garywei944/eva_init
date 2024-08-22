@@ -203,6 +203,9 @@ sa_common() {
 
   . "$HOME/.cargo/env"
 
+  # go
+  curl -sS https://webi.sh/golang | sh
+
   # bashtop
   (_bashtop)
 
@@ -257,7 +260,9 @@ sa_common() {
   pip install --user httpie
 
   # doggo
-  curl -sS https://raw.githubusercontent.com/mr-karan/doggo/main/install.sh | sh
+  # GARY: this actually requires sudo
+  # curl -sS https://raw.githubusercontent.com/mr-karan/doggo/main/install.sh | sh
+  go install github.com/mr-karan/doggo/cmd/doggo@latest
 
   #  (_pwndbg)  # pwndbg now requires sudo
   (_neofetch)
