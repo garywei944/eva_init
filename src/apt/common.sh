@@ -168,10 +168,8 @@ _duf() {
 }
 
 _fzf() {
-  cd /tmp || exit
-  git clone --depth 1 https://github.com/junegunn/fzf.git
-  cd fzf || exit
-  yes | ./install
+  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  ~/.fzf/install
 }
 
 _mcfly() {
